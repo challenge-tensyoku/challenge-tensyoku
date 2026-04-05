@@ -36,6 +36,7 @@ URLS = [
     "https://challenge-tensyoku.github.io/challenge-tensyoku/freeter-nanasai.html",
     "https://challenge-tensyoku.github.io/challenge-tensyoku/freeter-shakaihoken.html",
     "https://challenge-tensyoku.github.io/challenge-tensyoku/kuuhaku-kikan-mensetsu.html",
+    "https://challenge-tensyoku.github.io/challenge-tensyoku/jikopr-kakikata.html",
     "https://challenge-tensyoku.github.io/challenge-tensyoku/about.html",
 ]
 
