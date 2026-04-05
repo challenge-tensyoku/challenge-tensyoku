@@ -331,16 +331,50 @@
   .article-thumb {
     height: 130px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 14px 16px 12px;
+    position: relative;
+    overflow: hidden;
   }
-  .thumb-blue { background: #eff6ff; }
-  .thumb-green { background: #f0fdf4; }
-  .thumb-yellow { background: #fefce8; }
-  .thumb-purple { background: #faf5ff; }
-  .thumb-red { background: #fff1f2; }
-  .thumb-teal { background: #f0fdfa; }
+  /* カテゴリラベル */
+  .thumb-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.75);
+    color: #374151;
+    letter-spacing: 0.04em;
+    align-self: flex-start;
+  }
+  /* キーワードテキスト */
+  .thumb-kw {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 1.45;
+    color: #1a2640;
+    letter-spacing: 0.02em;
+    margin: 0;
+  }
+  /* 絵文字（右下） */
+  .thumb-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-size: 1.9rem;
+    opacity: 0.7;
+    line-height: 1;
+  }
+  /* グラデーション背景 */
+  .thumb-blue   { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
+  .thumb-green  { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); }
+  .thumb-yellow { background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%); }
+  .thumb-purple { background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%); }
+  .thumb-red    { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); }
+  .thumb-teal   { background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%); }
+  .thumb-orange { background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%); }
 
   .article-body { padding: 16px 18px; }
   .article-tag {
@@ -621,7 +655,7 @@
 <div class="section-sub">転職活動に役立つ情報を、わかりやすくまとめました</div>
 <div class="articles-grid">
 <a class="article-card" href="freeter-seishain.html">
-<div class="article-thumb thumb-blue">💼</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">フリーター</span><p class="thumb-kw">正社員への<br>最短ルート</p><span class="thumb-icon">💼</span></div>
 <div class="article-body">
 <span class="article-tag">フリーター</span>
 <h3>フリーターが正社員になる方法【完全ガイド】最短で内定を取るステップを解説</h3>
@@ -629,7 +663,7 @@
 </div>
 </a>
 <a class="article-card" href="kotsotsu-shoshain.html">
-<div class="article-thumb thumb-green">📄</div>
+<div class="article-thumb thumb-green"><span class="thumb-label">高卒・中卒</span><p class="thumb-kw">高卒でも<br>採用される仕事5選</p><span class="thumb-icon">📄</span></div>
 <div class="article-body">
 <span class="article-tag">高卒・中卒</span>
 <h3>高卒でも正社員になれる仕事5選【学歴不問で稼げる職種を徹底解説】</h3>
@@ -637,7 +671,7 @@
 </div>
 </a>
 <a class="article-card" href="neet-shushoku.html">
-<div class="article-thumb thumb-yellow">😟</div>
+<div class="article-thumb thumb-yellow"><span class="thumb-label">ニート</span><p class="thumb-kw">空白期間でも<br>正社員になれる</p><span class="thumb-icon">😊</span></div>
 <div class="article-body">
 <span class="article-tag">ニート</span>
 <h3>ニートから就職する方法【完全ガイド】空白期間があっても正社員になれる</h3>
@@ -645,7 +679,7 @@
 </div>
 </a>
 <a class="article-card" href="freeter-nenshu-sa.html">
-<div class="article-thumb thumb-purple">💰</div>
+<div class="article-thumb thumb-purple"><span class="thumb-label">年収アップ</span><p class="thumb-kw">生涯年収の差<br>徹底比較</p><span class="thumb-icon">💰</span></div>
 <div class="article-body">
 <span class="article-tag">年収アップ</span>
 <h3>フリーターと正社員の年収差はいくら？生涯年収・手取りの違いを徹底比較</h3>
@@ -653,7 +687,7 @@
 </div>
 </a>
 <a class="article-card" href="agent-vs-site.html">
-<div class="article-thumb thumb-red">🤝</div>
+<div class="article-thumb thumb-red"><span class="thumb-label">転職の基礎知識</span><p class="thumb-kw">エージェントと<br>サイトの違い</p><span class="thumb-icon">🤝</span></div>
 <div class="article-body">
 <span class="article-tag">転職の基礎知識</span>
 <h3>転職エージェントと転職サイトの違いとは？初心者向けにわかりやすく解説</h3>
@@ -661,7 +695,7 @@
 </div>
 </a>
 <a class="article-card" href="20dai-freeter-roadmap.html">
-<div class="article-thumb thumb-teal">📱</div>
+<div class="article-thumb thumb-teal"><span class="thumb-label">フリーター</span><p class="thumb-kw">20代の転職<br>完全ロードマップ</p><span class="thumb-icon">🗺️</span></div>
 <div class="article-body">
 <span class="article-tag">フリーター</span>
 <h3>20代フリーターが正社員になるまでの流れ【完全ロードマップ】</h3>
@@ -669,7 +703,7 @@
 </div>
 </a>
 <a class="article-card" href="haken-seishain.html">
-<div class="article-thumb thumb-blue">🏭</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">派遣・契約社員</span><p class="thumb-kw">派遣から<br>正社員になる方法</p><span class="thumb-icon">🏭</span></div>
 <div class="article-body">
 <span class="article-tag">派遣・契約社員</span>
 <h3>派遣から正社員になる方法【完全ガイド】転職成功のポイントを解説</h3>
@@ -677,7 +711,7 @@
 </div>
 </a>
 <a class="article-card" href="mikeiken-shigoto.html">
-<div class="article-thumb thumb-green">💡</div>
+<div class="article-thumb thumb-green"><span class="thumb-label">未経験</span><p class="thumb-kw">未経験でも<br>採用される仕事</p><span class="thumb-icon">💡</span></div>
 <div class="article-body">
 <span class="article-tag">未経験</span>
 <h3>未経験でもできる仕事おすすめ5選【正社員として採用されやすい職種を解説】</h3>
@@ -685,7 +719,7 @@
 </div>
 </a>
 <a class="article-card" href="mensetsu-taisaku.html">
-<div class="article-thumb thumb-red">🎤</div>
+<div class="article-thumb thumb-red"><span class="thumb-label">面接対策</span><p class="thumb-kw">面接で<br>落ちない対策法</p><span class="thumb-icon">🎤</span></div>
 <div class="article-body">
 <span class="article-tag">面接対策</span>
 <h3>正社員の面接でよく聞かれること【回答例あり】フリーター・未経験向け完全対策</h3>
@@ -693,7 +727,7 @@
 </div>
 </a>
 <a class="article-card" href="20dai-tensyoku-kostu.html">
-<div class="article-thumb thumb-purple">🏆</div>
+<div class="article-thumb thumb-purple"><span class="thumb-label">転職のコツ</span><p class="thumb-kw">転職を成功させる<br>コツを解説</p><span class="thumb-icon">🚀</span></div>
 <div class="article-body">
 <span class="article-tag">転職のコツ</span>
 <h3>20代で転職を成功させるコツ【フリーター・未経験でも内定が取れる方法】</h3>
@@ -701,7 +735,7 @@
 </div>
 </a>
 <a class="article-card" href="rirekisho-kakikata.html">
-<div class="article-thumb thumb-blue">📝</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">転職準備</span><p class="thumb-kw">履歴書の<br>書き方ガイド</p><span class="thumb-icon">📝</span></div>
 <div class="article-body">
 <span class="article-tag">転職準備</span>
 <h3>フリーターの履歴書の書き方【完全ガイド】空白期間・アルバイト歴の書き方を解説</h3>
@@ -709,7 +743,7 @@
 </div>
 </a>
 <a class="article-card" href="shikaku-osusume.html">
-<div class="article-thumb thumb-yellow">🎓</div>
+<div class="article-thumb thumb-yellow"><span class="thumb-label">スキルアップ</span><p class="thumb-kw">転職に有利な<br>おすすめ資格</p><span class="thumb-icon">🎓</span></div>
 <div class="article-body">
 <span class="article-tag">スキルアップ</span>
 <h3>20代におすすめの資格5選【転職・就職に有利な資格を徹底解説】</h3>
@@ -717,7 +751,7 @@
 </div>
 </a>
 <a class="article-card" href="seishain-saishoni.html">
-<div class="article-thumb thumb-teal">🎉</div>
+<div class="article-thumb thumb-teal"><span class="thumb-label">入社準備</span><p class="thumb-kw">入社初日から<br>好スタート</p><span class="thumb-icon">🎉</span></div>
 <div class="article-body">
 <span class="article-tag">入社準備</span>
 <h3>正社員になったら最初にやること10選【入社前・入社後の準備を完全解説】</h3>
@@ -725,7 +759,7 @@
 </div>
 </a>
 <a class="article-card" href="mensetsu-fukuso.html">
-<div class="article-thumb thumb-purple">👔</div>
+<div class="article-thumb thumb-purple"><span class="thumb-label">面接対策</span><p class="thumb-kw">面接の服装<br>男女別ガイド</p><span class="thumb-icon">👔</span></div>
 <div class="article-body">
 <span class="article-tag">面接対策</span>
 <h3>転職面接の服装・身だしなみ【男女別】フリーター・未経験向け完全ガイド</h3>
@@ -733,7 +767,7 @@
 </div>
 </a>
 <a class="article-card" href="hitorigurase-seikatsuhi.html">
-<div class="article-thumb thumb-green">🏠</div>
+<div class="article-thumb thumb-green"><span class="thumb-label">お金・生活</span><p class="thumb-kw">一人暮らしの<br>生活費を解説</p><span class="thumb-icon">🏠</span></div>
 <div class="article-body">
 <span class="article-tag">お金・生活</span>
 <h3>20代の一人暮らしにかかる費用は？正社員の給料で生活できる？徹底解説</h3>
@@ -741,7 +775,7 @@
 </div>
 </a>
 <a class="article-card" href="tensyoku-shippai.html">
-<div class="article-thumb thumb-red">⚠️</div>
+<div class="article-thumb thumb-red"><span class="thumb-label">転職のコツ</span><p class="thumb-kw">転職失敗の<br>よくある原因</p><span class="thumb-icon">⚠️</span></div>
 <div class="article-body">
 <span class="article-tag">転職のコツ</span>
 <h3>転職で失敗しないための注意点5つ【フリーター・未経験が陥りやすいNG行動】</h3>
@@ -749,7 +783,7 @@
 </div>
 </a>
 <a class="article-card" href="freeter-eigyo.html">
-<div class="article-thumb thumb-blue">💼</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">営業職</span><p class="thumb-kw">未経験から<br>営業職に転職</p><span class="thumb-icon">💼</span></div>
 <div class="article-body">
 <span class="article-tag">営業職</span>
 <h3>フリーターから営業職に転職する方法【未経験でも採用される秘訣を解説】</h3>
@@ -757,7 +791,7 @@
 </div>
 </a>
 <a class="article-card" href="tensyoku-kaisuu.html">
-<div class="article-thumb thumb-yellow">🔄</div>
+<div class="article-thumb thumb-yellow"><span class="thumb-label">転職の基礎知識</span><p class="thumb-kw">転職回数が多くても<br>大丈夫な理由</p><span class="thumb-icon">🔄</span></div>
 <div class="article-body">
 <span class="article-tag">転職の基礎知識</span>
 <h3>20代の転職回数は何回まで許容される？企業の本音と転職成功のポイント</h3>
@@ -765,7 +799,7 @@
 </div>
 </a>
 <a class="article-card" href="seishain-zeikin.html">
-<div class="article-thumb thumb-purple">💴</div>
+<div class="article-thumb thumb-purple"><span class="thumb-label">お金・生活</span><p class="thumb-kw">正社員の税金<br>わかりやすく解説</p><span class="thumb-icon">💴</span></div>
 <div class="article-body">
 <span class="article-tag">お金・生活</span>
 <h3>正社員になったら税金はどう変わる？フリーターとの違いをわかりやすく解説</h3>
@@ -773,7 +807,7 @@
 </div>
 </a>
 <a class="article-card" href="tensyoku-baito.html">
-<div class="article-thumb thumb-teal">🤔</div>
+<div class="article-thumb thumb-teal"><span class="thumb-label">転職の基礎知識</span><p class="thumb-kw">転職中にバイトは<br>してもいい？</p><span class="thumb-icon">🤔</span></div>
 <div class="article-body">
 <span class="article-tag">転職の基礎知識</span>
 <h3>転職活動中のアルバイトはしてもいい？注意点と上手な両立方法を解説</h3>
@@ -781,7 +815,7 @@
 </div>
 </a>
 <a class="article-card" href="tensyoku-riyuu-kotaekata.html">
-<div class="article-thumb thumb-blue">💬</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">面接対策</span><p class="thumb-kw">転職理由の<br>答え方ガイド</p><span class="thumb-icon">💬</span></div>
 <div class="article-body">
 <span class="article-tag">面接対策</span>
 <h3>20代の転職理由の答え方【面接対策】ネガポジ変換テンプレート付き</h3>
@@ -789,7 +823,7 @@
 </div>
 </a>
 <a class="article-card" href="jikopr-kakikata.html">
-<div class="article-thumb thumb-blue">🙋</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">面接対策</span><p class="thumb-kw">自己PRの<br>書き方と例文</p><span class="thumb-icon">🙋</span></div>
 <div class="article-body">
 <span class="article-tag">面接対策</span>
 <h3>自己PRの書き方【フリーター・未経験向け】例文つきで面接・書類選考を突破するコツ</h3>
@@ -797,7 +831,7 @@
 </div>
 </a>
 <a class="article-card" href="freeter-agent-osusume.html">
-<div class="article-thumb thumb-blue">🏢</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">転職エージェント</span><p class="thumb-kw">フリーターに<br>おすすめエージェント</p><span class="thumb-icon">🏢</span></div>
 <div class="article-body">
 <span class="article-tag">転職エージェント</span>
 <h3>フリーターにおすすめの転職エージェント5選【2026年版】未経験・高卒でも使えるサービスを比較</h3>
@@ -805,7 +839,7 @@
 </div>
 </a>
 <a class="article-card" href="mensetsu-jikoshoukai.html">
-<div class="article-thumb thumb-blue">🗣️</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">面接対策</span><p class="thumb-kw">面接の自己紹介<br>完全ガイド</p><span class="thumb-icon">🗣️</span></div>
 <div class="article-body">
 <span class="article-tag">面接対策</span>
 <h3>面接での自己紹介の仕方【例文つき】フリーター・未経験でも好印象を与えるコツ</h3>
@@ -813,7 +847,7 @@
 </div>
 </a>
 <a class="article-card" href="mikeiken-it-tensyoku.html">
-<div class="article-thumb thumb-blue">💻</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">未経験転職</span><p class="thumb-kw">未経験から<br>IT転職する方法</p><span class="thumb-icon">💻</span></div>
 <div class="article-body">
 <span class="article-tag">未経験転職</span>
 <h3>未経験からIT転職する方法【2026年版】20代フリーターでも狙える職種と進め方を解説</h3>
@@ -821,7 +855,7 @@
 </div>
 </a>
 <a class="article-card" href="daini-shinsotsu-tensyoku.html">
-<div class="article-thumb thumb-blue">🎓</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">第二新卒</span><p class="thumb-kw">第二新卒の<br>転職完全ガイド</p><span class="thumb-icon">🎓</span></div>
 <div class="article-body">
 <span class="article-tag">第二新卒</span>
 <h3>第二新卒の転職やり方【完全ガイド】ステップ・狙い目職種・エージェント活用法を解説</h3>
@@ -829,7 +863,7 @@
 </div>
 </a>
 <a class="article-card" href="freeter-nanasai.html">
-<div class="article-thumb thumb-orange">⏰</div>
+<div class="article-thumb thumb-orange"><span class="thumb-label">フリーター</span><p class="thumb-kw">フリーターは<br>何歳まで大丈夫？</p><span class="thumb-icon">⏰</span></div>
 <div class="article-body">
 <span class="article-tag">フリーター</span>
 <h3>フリーターは何歳まで大丈夫？年齢別の現実と正社員になるタイムリミット</h3>
@@ -837,7 +871,7 @@
 </div>
 </a>
 <a class="article-card" href="freeter-shakaihoken.html">
-<div class="article-thumb thumb-green">🏥</div>
+<div class="article-thumb thumb-green"><span class="thumb-label">お金・制度</span><p class="thumb-kw">フリーターの<br>社会保険ガイド</p><span class="thumb-icon">🏥</span></div>
 <div class="article-body">
 <span class="article-tag">お金・制度</span>
 <h3>フリーターの社会保険と扶養の関係【年収の壁をわかりやすく解説】103万・130万の境界線</h3>
@@ -845,7 +879,7 @@
 </div>
 </a>
 <a class="article-card" href="kuuhaku-kikan-mensetsu.html">
-<div class="article-thumb thumb-blue">📝</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">面接対策</span><p class="thumb-kw">空白期間の<br>面接での伝え方</p><span class="thumb-icon">📝</span></div>
 <div class="article-body">
 <span class="article-tag">面接対策</span>
 <h3>空白期間を面接で聞かれたときの答え方【例文つき】ニート・フリーターでも通過できるコツ</h3>
@@ -853,7 +887,7 @@
 </div>
 </a>
 <a class="article-card" href="haken-seishain.html">
-<div class="article-thumb thumb-blue">🏭</div>
+<div class="article-thumb thumb-blue"><span class="thumb-label">派遣・契約社員</span><p class="thumb-kw">派遣から<br>正社員になる方法</p><span class="thumb-icon">🏭</span></div>
 <div class="article-body">
 <span class="article-tag">派遣・契約社員</span>
 <h3>派遣から正社員になる方法【完全ガイド】転職成功のポイントを解説</h3>
@@ -861,7 +895,7 @@
 </div>
 </a>
 <a class="article-card" href="mikeiken-shigoto.html">
-<div class="article-thumb thumb-green">💡</div>
+<div class="article-thumb thumb-green"><span class="thumb-label">未経験</span><p class="thumb-kw">未経験でも<br>採用される仕事</p><span class="thumb-icon">💡</span></div>
 <div class="article-body">
 <span class="article-tag">未経験</span>
 <h3>未経験でもできる仕事おすすめ5選【正社員として採用されやすい職種を解説】</h3>
@@ -869,7 +903,7 @@
 </div>
 </a>
 <a class="article-card" href="mensetsu-taisaku.html">
-<div class="article-thumb thumb-yellow">🎤</div>
+<div class="article-thumb thumb-red"><span class="thumb-label">面接対策</span><p class="thumb-kw">面接で<br>落ちない対策法</p><span class="thumb-icon">🎤</span></div>
 <div class="article-body">
 <span class="article-tag">面接対策</span>
 <h3>正社員の面接でよく聞かれること【回答例あり】フリーター・未経験向け完全対策</h3>
@@ -877,7 +911,7 @@
 </div>
 </a>
 <a class="article-card" href="20dai-tensyoku-kostu.html">
-<div class="article-thumb thumb-purple">🚀</div>
+<div class="article-thumb thumb-purple"><span class="thumb-label">転職のコツ</span><p class="thumb-kw">転職を成功させる<br>コツを解説</p><span class="thumb-icon">🚀</span></div>
 <div class="article-body">
 <span class="article-tag">転職のコツ</span>
 <h3>20代で転職を成功させるコツ【フリーター・未経験でも内定が取れる方法】</h3>
@@ -885,7 +919,7 @@
 </div>
 </a>
 <a class="article-card" href="freeter-shibo-doki.html">
-<div class="article-thumb thumb-teal">✍️</div>
+<div class="article-thumb thumb-teal"><span class="thumb-label">転職準備</span><p class="thumb-kw">志望動機の<br>書き方と例文</p><span class="thumb-icon">✍️</span></div>
 <div class="article-body">
 <span class="article-tag">転職準備</span>
 <h3>フリーター・未経験の志望動機の書き方【例文あり】採用担当者が納得する伝え方を解説</h3>
