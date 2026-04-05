@@ -77,8 +77,9 @@ def main():
     success = 0
     failed = 0
 
+    total = len(URLS)
     for i, url in enumerate(URLS, 1):
-        print(f"[{i:2d}/25] {url.split('/')[-1] or 'index'}", end=" ... ")
+        print(f"[{i:2d}/{total}] {url.split('/')[-1] or 'index'}", end=" ... ")
         status, body = request_indexing(url, token)
         if status == 200:
             print("OK")
