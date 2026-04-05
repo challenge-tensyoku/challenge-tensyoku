@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 文字コード・ビューポート設定 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ページタイトル -->
+<title>フリーターの社会保険と扶養の関係【年収の壁をわかりやすく解説】103万・130万の境界線 | チャレンジ転職</title>
+<!-- メタディスクリプション -->
+<meta name="description" content="フリーターが親の扶養に入れる年収の壁（103万・130万・150万）をわかりやすく解説。扶養を外れたときの手取りへの影響、国民健康保険と社会保険の違い、将来の年金リスクまで網羅しています。">
+<!-- Google Fontsの読み込み -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  /* ===== CSS変数（サイト共通カラー） ===== */
+  :root {
+    --primary: #1a6ef5;
+    --primary-dark: #1358cc;
+    --primary-light: #e8f0fe;
+    --accent: #00c896;
+    --dark: #0f1f3d;
+    --text: #1a2640;
+    --muted: #6b7a99;
+    --border: #e2e8f4;
+    --light: #f7f9ff;
+    --white: #ffffff;
+  }
+
+  /* ===== リセット・ベーススタイル ===== */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ===== ヘッダー ===== */
+  header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 12px rgba(26,110,245,0.07);
+  }
+  .logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-icon {
+    background: var(--primary);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 900;
+  }
+  .logo span { color: var(--primary); }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  nav a:hover { color: var(--primary); }
+  .nav-cta {
+    background: var(--primary);
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.82rem !important;
+  }
+
+  /* ===== パンくずリスト ===== */
+  .breadcrumb {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+  }
+  .breadcrumb-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .breadcrumb-inner a { color: var(--primary); text-decoration: none; }
+
+  /* ===== ヒーロー（グラデーション背景） ===== */
+  .article-hero {
+    background: linear-gradient(135deg, #0f1f3d 0%, #1a6ef5 100%);
+    padding: 48px 20px 40px;
+    color: #fff;
+  }
+  .article-hero-inner { max-width: 1060px; margin: 0 auto; }
+  .article-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 900;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+  }
+  .article-hero h1 {
+    font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+    font-weight: 900;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .article-hero h1 em { font-style: normal; color: #7dd3fc; }
+  .article-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+    flex-wrap: wrap;
+  }
+
+  /* ===== 2カラムレイアウト（記事本文＋サイドバー） ===== */
+  .container {
+    max-width: 1060px;
+    margin: 36px auto 60px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 28px;
+    align-items: start;
+  }
+
+  /* ===== レスポンシブ：スマホは1カラム ===== */
+  @media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    header { padding: 0 16px; height: 56px; }
+    nav { display: none; }
+    .logo { font-size: 1rem; }
+    .logo-icon { width: 28px; height: 28px; font-size: 0.85rem; }
+  }
+
+  /* ===== 記事本文エリア ===== */
+  .article-body {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 36px 40px;
+    box-shadow: 0 2px 12px rgba(26,110,245,0.06);
+  }
+  @media (max-width: 600px) { .article-body { padding: 24px 18px; } }
+
+  /* ===== 目次（TOC） ===== */
+  .toc {
+    background: var(--light);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 32px;
+  }
+  .toc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    color: var(--primary);
+  }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 6px; font-size: 0.88rem; }
+  .toc a { color: var(--primary); text-decoration: none; font-weight: 700; }
+
+  /* ===== 見出しスタイル ===== */
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-left: 4px solid var(--primary); /* サイト共通：左ボーダーアクセント */
+    padding: 10px 16px;
+    background: var(--primary-light);
+    margin: 36px 0 18px;
+    color: var(--dark);
+    border-radius: 0 8px 8px 0;
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 24px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+    color: var(--dark);
+  }
+  p { margin-bottom: 16px; font-size: 0.93rem; }
+
+  /* ===== ボックスコンポーネント ===== */
+  /* チェックリストボックス（グリーン系） */
+  .box-check {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .box-check strong { display: block; color: #16a34a; font-size: 0.82rem; font-weight: 900; letter-spacing: 1px; margin-bottom: 10px; }
+  .box-check ul { padding-left: 20px; }
+  .box-check li { margin-bottom: 6px; font-size: 0.88rem; }
+
+  /* プライマリボックス（ブルー系） */
+  .box-primary {
+    background: var(--primary-light);
+    border: 1.5px solid var(--primary);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .box-primary strong { display: block; color: var(--primary); font-size: 0.82rem; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; }
+  .box-primary p { font-size: 0.88rem; margin: 0; line-height: 1.8; }
+
+  /* ダークボックス（ネイビー） */
+  .box-dark {
+    background: var(--dark);
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .box-dark strong { display: block; color: #7dd3fc; font-size: 0.82rem; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; }
+  .box-dark p { color: rgba(255,255,255,0.85); margin: 0; font-size: 0.88rem; }
+
+  /* 警告ボックス（オレンジ系） */
+  .box-warn {
+    background: #fff7ed;
+    border: 1.5px solid #fdba74;
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 20px 0;
+  }
+  .box-warn strong { display: block; color: #ea580c; font-size: 0.82rem; font-weight: 900; letter-spacing: 1px; margin-bottom: 8px; }
+  .box-warn p { font-size: 0.88rem; margin: 0; line-height: 1.8; }
+  .box-warn ul { padding-left: 20px; }
+  .box-warn li { margin-bottom: 6px; font-size: 0.88rem; }
+
+  /* ===== 番号付きカード（理由・手順など） ===== */
+  .reason-card {
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    background: var(--white);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .reason-num {
+    background: #ef4444;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .reason-content h4 { font-size: 0.95rem; font-weight: 900; margin-bottom: 6px; color: var(--dark); }
+  .reason-content p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+
+  /* 手順カード（ブルー系） */
+  .step-card {
+    border: 1.5px solid #bfdbfe;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    background: #eff6ff;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .step-num {
+    background: var(--primary);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-content h4 { font-size: 0.95rem; font-weight: 900; margin-bottom: 6px; color: var(--dark); }
+  .step-content p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+
+  /* ===== 比較グリッド ===== */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  @media (max-width: 500px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card { border-radius: 14px; padding: 24px; text-align: center; }
+  .compare-card.freeter { background: #fff1f2; border: 2px solid #fca5a5; }
+  .compare-card.seishain { background: #f0fdf4; border: 2px solid #86efac; }
+  .compare-card-label { font-size: 0.78rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 10px; }
+  .compare-card.freeter .compare-card-label { color: #ef4444; }
+  .compare-card.seishain .compare-card-label { color: #16a34a; }
+  .compare-card-amount { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+  .compare-card.freeter .compare-card-amount { color: #ef4444; }
+  .compare-card.seishain .compare-card-amount { color: #16a34a; }
+  .compare-card-sub { font-size: 0.78rem; color: var(--muted); }
+
+  /* ===== テーブル ===== */
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; border-radius: 10px; overflow: hidden; }
+  th { background: var(--dark); color: #fff; padding: 10px 14px; text-align: left; font-weight: 700; font-size: 0.78rem; }
+  td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--light); }
+  tr:hover td { background: var(--primary-light); }
+
+  /* ===== アフィリエイトCTAボックス ===== */
+  /* 冒頭：ソフトなインラインCTA */
+  .cta-inline-soft {
+    background: #f0f7ff;
+    border: 1.5px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .cta-soft-text { font-size: 0.88rem; margin: 0; }
+  .cta-soft-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.82rem;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cta-soft-btn:hover { background: var(--primary-dark); }
+
+  /* 中間：グラデーションCTA */
+  .cta-inline-mid {
+    background: linear-gradient(135deg, #0f1f3d 0%, #1a6ef5 100%);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 32px 0;
+  }
+  .cta-mid-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .cta-mid-text strong { display: block; color: #fff; font-size: 0.95rem; margin-bottom: 4px; }
+  .cta-mid-text p { color: rgba(255,255,255,0.8); font-size: 0.82rem; margin: 0; }
+  .cta-mid-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .cta-mid-btn:hover { background: var(--primary-light); }
+
+  /* 末尾：大きめのCTAカード */
+  .cta-final {
+    background: linear-gradient(135deg, #0f1f3d 0%, #1358cc 100%);
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin: 32px 0 0;
+    text-align: center;
+  }
+  .cta-final-title {
+    color: #7dd3fc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .cta-final h3 { color: #fff; font-size: 1.15rem; font-weight: 900; margin-bottom: 10px; line-height: 1.5; }
+  .cta-final p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 20px; }
+  .cta-final-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: opacity 0.2s;
+  }
+  .cta-final-btn:hover { opacity: 0.88; }
+  .cta-final-note { color: rgba(255,255,255,0.55); font-size: 0.75rem; margin-top: 10px; }
+
+  /* ===== アフィリエイトカード（サービス一覧） ===== */
+  .aff-card {
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .aff-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(26,110,245,0.1); }
+  .aff-card.top { border-color: var(--primary); border-width: 2px; }
+  .aff-rank { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; min-width: 44px; text-align: center; line-height: 1; }
+  .aff-rank.r1 { color: #f59e0b; }
+  .aff-info { flex: 1; }
+  .aff-info h3 { font-size: 1rem; font-weight: 900; margin-bottom: 4px; color: var(--dark); }
+  .aff-info p { font-size: 0.8rem; color: var(--muted); margin: 0; }
+  .aff-badge { display: inline-block; background: var(--primary-light); color: var(--primary); font-size: 0.68rem; font-weight: 900; padding: 2px 8px; border-radius: 20px; margin-bottom: 4px; }
+  .aff-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .aff-btn:hover { background: var(--primary-dark); }
+
+  /* ===== サイドバー ===== */
+  .sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(26,110,245,0.06);
+  }
+  .sidebar-card-title {
+    background: var(--dark);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 10px 16px;
+  }
+  .sidebar-card-title span { color: #7dd3fc; }
+  .sidebar-card-body { padding: 16px; }
+  .sidebar-rank-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .sidebar-rank-item:last-child { border-bottom: none; }
+  .s-rank { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 900; color: var(--primary); min-width: 24px; }
+  .s-name { font-weight: 900; font-size: 0.85rem; }
+  .s-tag { display: block; font-size: 0.72rem; color: var(--muted); }
+  .sidebar-btn {
+    display: block;
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-weight: 900;
+    font-size: 0.82rem;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 12px;
+  }
+  .related-list { list-style: none; padding: 0; }
+  .related-list li { border-bottom: 1px solid var(--border); }
+  .related-list li:last-child { border-bottom: none; }
+  .related-list a { display: block; padding: 9px 0; color: var(--primary); text-decoration: none; font-size: 0.82rem; font-weight: 700; line-height: 1.5; }
+
+  /* ===== フッター ===== */
+  footer { background: var(--dark); color: #6b7a99; padding: 40px 24px 28px; }
+  .footer-inner { max-width: 1060px; margin: 0 auto; }
+  .footer-logo { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 900; color: #fff; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .footer-logo span { color: #7dd3fc; }
+  .footer-desc { font-size: 0.82rem; margin-bottom: 20px; line-height: 1.8; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 24px; font-size: 0.8rem; }
+  .footer-links a { color: #6b7a99; text-decoration: none; }
+  .footer-links a:hover { color: #fff; }
+  .footer-copy { border-top: 1px solid #1e2d4d; padding-top: 20px; font-size: 0.75rem; text-align: center; }
+
+  /* ===== 年収の壁：ビジュアルバー ===== */
+  .wall-bar {
+    margin: 24px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+  }
+  .wall-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+  }
+  .wall-bar-label {
+    background: var(--dark);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 900;
+    padding: 14px 20px;
+    min-width: 110px;
+    text-align: center;
+  }
+  .wall-bar-detail {
+    padding: 12px 18px;
+    font-size: 0.85rem;
+    flex: 1;
+  }
+  .wall-bar-item:nth-child(1) .wall-bar-detail { background: #f0fdf4; }
+  .wall-bar-item:nth-child(2) .wall-bar-detail { background: #fff7ed; }
+  .wall-bar-item:nth-child(3) .wall-bar-detail { background: #fff1f2; }
+  .wall-bar-item:nth-child(4) .wall-bar-detail { background: #fef2f2; }
+  .wall-bar-item:nth-child(1) .wall-bar-label { background: #16a34a; }
+  .wall-bar-item:nth-child(2) .wall-bar-label { background: #ea580c; }
+  .wall-bar-item:nth-child(3) .wall-bar-label { background: #dc2626; }
+  .wall-bar-item:nth-child(4) .wall-bar-label { background: #991b1b; }
+  .wall-bar-detail strong { display: block; font-size: 0.88rem; color: var(--dark); margin-bottom: 2px; }
+  .wall-bar-detail span { font-size: 0.78rem; color: var(--muted); }
+  .wall-bar-item + .wall-bar-item { border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<!-- ===== ヘッダー：ロゴ＋ナビゲーション ===== -->
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">C</div>チャレンジ<span>転職</span>
+  </a>
+  <nav>
+    <a href="index.html">ホーム</a>
+    <a href="index.html#articles">記事一覧</a>
+    <a href="index.html#ranking" class="nav-cta">サービスを探す →</a>
+  </nav>
+</header>
+
+<!-- ===== パンくずリスト ===== -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">TOP</a> &rsaquo;
+    <a href="#">お金・社会保険</a> &rsaquo;
+    フリーターの社会保険と扶養の関係
+  </div>
+</div>
+
+<!-- ===== ヒーロー：グラデーション背景にH1 ===== -->
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <span class="article-tag"># お金・社会保険</span>
+    <h1>フリーターの社会保険と扶養の関係<br><em>103万・130万の境界線</em>をわかりやすく解説</h1>
+    <div class="article-meta">
+      <span>📅 2026年4月更新</span>
+      <span>⏱ 読了時間：約8分</span>
+      <span>✍ チャレンジ転職編集部</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== メインコンテンツ（2カラム） ===== -->
+<div class="container">
+  <main>
+    <div class="article-body">
+
+      <!-- リード文 -->
+      <p>「親の扶養に入ったままバイトして大丈夫？」「年収130万円って何が変わるの？」フリーターなら一度は考えたことがあるはずです。</p>
+      <p>結論からいうと、<strong>年収の壁を超えると手取りが一気に減る可能性があります</strong>。しかし正しく理解すれば怖くはありません。この記事では扶養・社会保険・年収の壁を徹底解説します。</p>
+
+      <!-- この記事でわかること -->
+      <div class="box-check">
+        <strong>📌 この記事でわかること</strong>
+        <ul>
+          <li>103万・130万・150万円の壁のそれぞれの意味</li>
+          <li>扶養を外れたときの手取りへの具体的な影響</li>
+          <li>国民健康保険と社会保険（健康保険）の違い</li>
+          <li>親の会社への扶養抹消手続きの流れ</li>
+          <li>フリーターのまま続けることの年金リスク</li>
+          <li>社会保険を会社に入ってもらうのが最もトクな理由</li>
+        </ul>
+      </div>
+
+      <!-- 目次 -->
+      <div class="toc">
+        <div class="toc-title">// 目次</div>
+        <ol>
+          <li><a href="#s1">フリーターが「扶養に入れる」条件とは？年収の壁をわかりやすく解説</a></li>
+          <li><a href="#s2">「年収の壁」を超えたら何が変わる？手取りへの影響を試算</a></li>
+          <li><a href="#s3">フリーターが自分で社会保険に入る方法——国民健康保険 vs 社会保険</a></li>
+          <li><a href="#s4">親の会社への手続きは誰がやる？扶養を外れるときの流れ</a></li>
+          <li><a href="#s5">フリーターのまま社会保険を続けることのリスク——将来の年金はどうなる？</a></li>
+          <li><a href="#s6">社会保険を「会社に入ってもらう」のが最もトクな理由</a></li>
+        </ol>
+      </div>
+
+      <!-- ===== 冒頭CTA（アフィリエイト） ===== -->
+      <!-- CTA1：社会保険も完備。正社員になれば解決する話。まず無料相談 -->
+      <div class="cta-inline-soft">
+        <p class="cta-soft-text"><strong>社会保険も完備。正社員になれば解決する話。</strong>まず無料相談してみませんか？</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCN+8KELOI+3Y6M+63OYA" class="cta-soft-btn" rel="nofollow" target="_blank">第二新卒エージェントneoに無料相談 →</a>
+      </div>
+
+      <!-- ===== H2-1 ===== -->
+      <h2 id="s1">1. フリーターが「扶養に入れる」条件とは？年収の壁をわかりやすく解説</h2>
+
+      <p>「扶養に入る」とは、親の健康保険や税制上の扶養控除の対象になることです。条件が年収によって細かく分かれているため、まず「年収の壁」を整理しましょう。</p>
+
+      <!-- 年収の壁：ビジュアルバー -->
+      <div class="wall-bar">
+        <div class="wall-bar-item">
+          <div class="wall-bar-label">〜103万円</div>
+          <div class="wall-bar-detail">
+            <strong>税制上の扶養に入れる（所得税がかからない）</strong>
+            <span>親の所得税・住民税の扶養控除が適用。健康保険の扶養にも入れる。</span>
+          </div>
+        </div>
+        <div class="wall-bar-item">
+          <div class="wall-bar-label">103〜130万円</div>
+          <div class="wall-bar-detail">
+            <strong>所得税はかかるが、健康保険の扶養には入れる</strong>
+            <span>自分に所得税が発生し始める。ただし親の健保の扶養には引き続き入れる場合が多い。</span>
+          </div>
+        </div>
+        <div class="wall-bar-item">
+          <div class="wall-bar-label">130〜150万円</div>
+          <div class="wall-bar-detail">
+            <strong>健康保険の扶養を外れる（2025年〜）</strong>
+            <span>2025年10月から「106万の壁」が撤廃。130万円超で親の健保の扶養から外れる（目安）。</span>
+          </div>
+        </div>
+        <div class="wall-bar-item">
+          <div class="wall-bar-label">150万円超</div>
+          <div class="wall-bar-detail">
+            <strong>配偶者特別控除の段階的減少が始まる</strong>
+            <span>自分が配偶者の場合の話。親の扶養（子として）は130万円超で外れる。</span>
+          </div>
+        </div>
+      </div>
+
+      <h3>「103万円の壁」とは</h3>
+      <p>給与収入が年間103万円以下であれば、<strong>所得税がゼロ</strong>になります（給与所得控除55万円＋基礎控除48万円）。さらに親の所得税の扶養控除（38万円）が使えるため、親の税負担も減ります。</p>
+
+      <h3>「130万円の壁」とは</h3>
+      <p>年収が130万円を超えると、<strong>親の健康保険の扶養から外れます</strong>。これが最も影響が大きい壁です。扶養から外れると自分で国民健康保険や国民年金に加入する必要があり、保険料負担が発生します。</p>
+
+      <div class="box-warn">
+        <strong>⚠️ 注意：月収で判定される場合がある</strong>
+        <p>健康保険の扶養判定は「年収見込み」で行われます。月収が108,334円（年130万円÷12）を超えた時点で扶養から外れると判断される健保組合もあります。一時的に高収入のシフトを入れるだけでも注意が必要です。</p>
+      </div>
+
+      <!-- ===== H2-2 ===== -->
+      <h2 id="s2">2. 「年収の壁」を超えたら何が変わる？手取りへの影響を試算</h2>
+
+      <p>実際に年収の壁を超えると手取りはどう変わるのか、具体的な数字で見てみましょう。</p>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>年収</th>
+            <th>所得税</th>
+            <th>住民税</th>
+            <th>健康保険料（年）</th>
+            <th>国民年金（年）</th>
+            <th>手取り目安</th>
+          </tr>
+          <tr>
+            <td>100万円</td>
+            <td>0円</td>
+            <td>0〜少額</td>
+            <td>扶養内：0円</td>
+            <td>扶養内：0円</td>
+            <td>約98〜100万円</td>
+          </tr>
+          <tr>
+            <td>130万円</td>
+            <td>約2万円</td>
+            <td>約5万円</td>
+            <td>扶養内：0円</td>
+            <td>扶養内：0円</td>
+            <td>約123万円</td>
+          </tr>
+          <tr>
+            <td>140万円</td>
+            <td>約4万円</td>
+            <td>約8万円</td>
+            <td>約20〜25万円</td>
+            <td>約20万円</td>
+            <td>約88〜93万円</td>
+          </tr>
+          <tr>
+            <td>160万円</td>
+            <td>約7万円</td>
+            <td>約10万円</td>
+            <td>約23〜28万円</td>
+            <td>約20万円</td>
+            <td>約100〜105万円</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="box-dark">
+        <strong>💡 130万円超えで「手取りが逆転する」現象</strong>
+        <p>年収を130万円から140万円に増やしても、国民健康保険・国民年金の支払いが始まるため、<strong>手取りが130万円のときより少なくなる</strong>ケースがあります。これが「130万円の壁」が怖いといわれる理由です。年収160〜170万円を超えてようやく逆転します。</p>
+      </div>
+
+      <h3>親の税負担も増える</h3>
+      <p>子どもが扶養から外れると、親の所得税の「扶養控除（38万円）」が使えなくなります。親の年収にもよりますが、<strong>親の税負担が年間4〜8万円増える</strong>こともあります。家族全体での負担を考えると、扶養内に収めるか、しっかり稼ぐかの二択です。</p>
+
+      <div class="compare-grid">
+        <div class="compare-card freeter">
+          <div class="compare-card-label">// 130万円ちょっと超え</div>
+          <div class="compare-card-amount">手取り逆転</div>
+          <div class="compare-card-sub">130万円のときより手取りが減る</div>
+        </div>
+        <div class="compare-card seishain">
+          <div class="compare-card-label">// 正社員（社会保険加入）</div>
+          <div class="compare-card-amount">会社が半額負担</div>
+          <div class="compare-card-sub">保険料の半分を会社が払ってくれる</div>
+        </div>
+      </div>
+
+      <!-- ===== H2-3 ===== -->
+      <h2 id="s3">3. フリーターが自分で社会保険に入る方法——国民健康保険 vs 社会保険</h2>
+
+      <p>扶養を外れたら、自分で健康保険と年金に加入しなければなりません。方法は主に2つです。</p>
+
+      <h3>選択肢①：国民健康保険＋国民年金（自営業・フリーター向け）</h3>
+      <div class="reason-card">
+        <div class="reason-num">特徴</div>
+        <div class="reason-content">
+          <h4>保険料を全額自己負担する</h4>
+          <p>国民健康保険は前年の所得をもとに計算されます。国民年金は2024年度で月額16,980円（年約20万円）。合計すると年間30〜45万円の負担になります。</p>
+        </div>
+      </div>
+
+      <h3>選択肢②：勤務先のアルバイト先で社会保険に加入</h3>
+      <div class="reason-card">
+        <div class="reason-num">条件</div>
+        <div class="reason-content">
+          <h4>週20時間以上勤務・月収88,000円以上などの条件あり</h4>
+          <p>2022年10月から従業員101人以上の企業では週20時間以上・月収88,000円以上で社会保険加入義務が生じます。この場合、保険料の半額を会社が負担してくれます。</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>比較項目</th>
+            <th>国民健康保険＋国民年金</th>
+            <th>社会保険（健康保険＋厚生年金）</th>
+          </tr>
+          <tr>
+            <td>保険料の負担</td>
+            <td>全額自己負担</td>
+            <td>会社と折半（半額）</td>
+          </tr>
+          <tr>
+            <td>将来の年金額</td>
+            <td>国民年金のみ（少ない）</td>
+            <td>厚生年金が上乗せ（多い）</td>
+          </tr>
+          <tr>
+            <td>傷病手当金</td>
+            <td>なし</td>
+            <td>あり（病気で働けない時に給付）</td>
+          </tr>
+          <tr>
+            <td>出産手当金</td>
+            <td>なし</td>
+            <td>あり</td>
+          </tr>
+          <tr>
+            <td>月の保険料目安</td>
+            <td>約2.5〜4万円</td>
+            <td>約1.5〜2万円（本人負担分）</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="box-primary">
+        <strong>📌 どちらが有利か</strong>
+        <p>保険料・将来の年金・各種給付すべての面で、<strong>社会保険（会社の健康保険＋厚生年金）が圧倒的に有利</strong>です。バイト先で加入条件を満たすなら積極的に活用しましょう。ただし正社員として就職すれば、より充実した条件で加入できます。</p>
+      </div>
+
+      <!-- ===== 中間CTA（アフィリエイト） ===== -->
+      <!-- CTA2：将来の年金も心配なら、今すぐ動くのが正解 -->
+      <div class="cta-inline-mid">
+        <div class="cta-mid-inner">
+          <div class="cta-mid-text">
+            <strong>将来の年金も心配なら、今すぐ動くのが正解。</strong>
+            <p>正社員になれば厚生年金に加入でき、将来の年金額が大きく変わります。</p>
+          </div>
+          <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCN+8KELOI+3Y6M+63OYA" class="cta-mid-btn" rel="nofollow" target="_blank">無料相談してみる →</a>
+        </div>
+      </div>
+
+      <!-- ===== H2-4 ===== -->
+      <h2 id="s4">4. 親の会社への手続きは誰がやる？扶養を外れるときの流れ</h2>
+
+      <p>扶養から外れるときは、<strong>親が勤め先（会社）に申請する</strong>必要があります。子ども本人が直接手続きするわけではありません。流れを確認しましょう。</p>
+
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>収入が扶養の条件を超えると判明する</h4>
+          <p>年収が130万円を超える見込みになったタイミング（または超えた後）で手続きが必要です。月収ベースで判定される健保組合もあるため、早めの確認が重要です。</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>親が会社（人事・総務部）に「被扶養者異動届」を提出</h4>
+          <p>「健康保険被扶養者（異動）届」という書類を親の勤め先に提出します。書類の様式は会社によって異なります。</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>健康保険証を返還する</h4>
+          <p>扶養を外れると、今まで使っていた親の健康保険証が使えなくなります。速やかに親に返却しましょう。</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>自分で国民健康保険に加入（または勤務先の社保に加入）</h4>
+          <p>扶養を外れた翌日から14日以内に市区町村の窓口で国民健康保険の加入手続きをします（社保加入の場合は勤務先経由で手続き）。</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>国民年金の加入手続きも行う</h4>
+          <p>20歳以上であれば国民年金の加入も必要です。市区町村窓口で「国民年金被保険者関係届書」を提出します。</p>
+        </div>
+      </div>
+
+      <div class="box-warn">
+        <strong>⚠️ 手続きが遅れるとどうなる？</strong>
+        <ul>
+          <li>未加入期間の保険料を遡って請求される（国民健康保険は最大2年分）</li>
+          <li>その期間は医療費が全額自己負担になるリスクがある</li>
+          <li>国民年金の未納期間は将来の年金額に直接影響する</li>
+        </ul>
+      </div>
+
+      <!-- ===== H2-5 ===== -->
+      <h2 id="s5">5. フリーターのまま社会保険を続けることのリスク——将来の年金はどうなる？</h2>
+
+      <p>フリーターのまま国民年金だけに加入し続けた場合、将来の年金額はどうなるのでしょうか。正社員（厚生年金加入）との差は非常に大きいです。</p>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>条件</th>
+            <th>月額年金（65歳〜）</th>
+            <th>年間年金額</th>
+          </tr>
+          <tr>
+            <td>フリーター（国民年金のみ・40年納付）</td>
+            <td>約68,000円</td>
+            <td>約81万円</td>
+          </tr>
+          <tr>
+            <td>正社員（厚生年金加入・平均月収22万円・40年）</td>
+            <td>約145,000円</td>
+            <td>約174万円</td>
+          </tr>
+          <tr>
+            <td>差額</td>
+            <td>約77,000円/月</td>
+            <td>約93万円/年</td>
+          </tr>
+        </table>
+      </div>
+
+      <p>上記はあくまで目安ですが、<strong>正社員と比べて年間90万円以上の差</strong>が出ることも珍しくありません。20年間の受給額で計算すると、差は1,800万円以上になります。</p>
+
+      <div class="box-dark">
+        <strong>💡 フリーターの年金リスクまとめ</strong>
+        <p>①国民年金だけでは老後資金が圧倒的に不足する ②収入が不安定だと保険料未納になりやすい ③未納期間があると将来の年金額がさらに減る ④正社員の厚生年金は会社が半額負担してくれる。この差は放置すればするほど取り返しがつかなくなります。</p>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-num">⚠</div>
+        <div class="reason-content">
+          <h4>国民年金の未納は「老後破産」に直結する</h4>
+          <p>フリーターは収入が不安定なため、月額16,980円の国民年金を払えず未納になるケースが多いです。未納期間が長くなると老後の年金額が減り、最悪の場合は無年金になるリスクもあります。</p>
+        </div>
+      </div>
+
+      <!-- ===== H2-6 ===== -->
+      <h2 id="s6">6. 社会保険を「会社に入ってもらう」のが最もトクな理由</h2>
+
+      <p>ここまで読んでいただければ、フリーターのままで社会保険を自己負担し続けることのデメリットが明確になったと思います。では、なぜ「正社員として社会保険に入ってもらう」ことがもっともトクなのか整理しましょう。</p>
+
+      <div class="step-card">
+        <div class="step-num">①</div>
+        <div class="step-content">
+          <h4>保険料の半額を会社が負担してくれる</h4>
+          <p>健康保険料・厚生年金保険料ともに、会社が半額を負担します。月3万円の保険料なら、自己負担は1.5万円だけ。国民健康保険＋国民年金を全額払うよりはるかに安くなります。</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">②</div>
+        <div class="step-content">
+          <h4>厚生年金で将来の受給額が大幅アップ</h4>
+          <p>厚生年金は国民年金に上乗せされる年金です。加入期間が長いほど将来の受給額が増えます。フリーター時代に厚生年金に入っていない期間は、将来の年金額に直接影響します。</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">③</div>
+        <div class="step-content">
+          <h4>傷病手当金・出産手当金など給付が充実</h4>
+          <p>病気やケガで働けなくなったとき、健康保険から傷病手当金（標準報酬の約3分の2）が最長1年6ヶ月支給されます。フリーターの国民健康保険にはこの給付がありません。</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">④</div>
+        <div class="step-content">
+          <h4>手続きが自動で完了する（年末調整など）</h4>
+          <p>正社員なら社会保険の加入・脱退・保険料計算はすべて会社がやってくれます。確定申告や市区町村への手続きも大幅に簡略化されます。</p>
+        </div>
+      </div>
+
+      <div class="box-primary">
+        <strong>📌 結論：社会保険の問題は正社員になることで丸ごと解決できる</strong>
+        <p>扶養の壁・国保の高額保険料・年金の不安・手続きの煩雑さ——これらはすべて、<strong>正社員として就職することで一気に解決します</strong>。しかも月収も上がり、ボーナスや昇給も期待できます。社会保険の問題を入口に、就職を前向きに検討してみてください。</p>
+      </div>
+
+      <!-- まとめ -->
+      <h2>まとめ</h2>
+      <div class="box-check">
+        <strong>✅ この記事のまとめ</strong>
+        <ul>
+          <li>103万円の壁＝所得税の扶養、130万円の壁＝健康保険の扶養（最重要）</li>
+          <li>130万円を少し超えた程度では手取りが逆転するリスクがある</li>
+          <li>扶養を外れたら14日以内に国民健康保険の加入手続きが必要</li>
+          <li>親の会社への手続きは「親が申請する」もの</li>
+          <li>フリーターのまま国民年金だけでは老後の年金が正社員の半分以下になる</li>
+          <li>正社員になれば会社が保険料を半額負担・厚生年金で老後の受給額も増加</li>
+        </ul>
+      </div>
+      <p>社会保険の悩みを根本から解決したいなら、正社員への就職が一番の近道です。まずは転職エージェントに無料で相談してみましょう。</p>
+
+      <!-- ===== 末尾CTA（アフィリエイト） ===== -->
+      <!-- CTA3：登録2分・完全無料。後悔する前に、まず動いてみよう -->
+      <div class="cta-final">
+        <div class="cta-final-title">// RECOMMENDED SERVICE</div>
+        <h3>登録2分・完全無料。<br>後悔する前に、まず動いてみよう。</h3>
+        <p>フリーター・未経験歓迎。社会保険完備の正社員求人多数。<br>専任のアドバイザーがマンツーマンでサポートします。</p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCN+8KELOI+3Y6M+63OYA" class="cta-final-btn" rel="nofollow" target="_blank">第二新卒エージェントneoに無料登録する →</a>
+        <p class="cta-final-note">相談・登録は完全無料。強引な勧誘は一切ありません。</p>
+      </div>
+
+      <!-- アフィリエイトカード（サービス紹介） -->
+      <h2>正社員を目指す方におすすめのサービス</h2>
+      <p>すべて<strong>完全無料</strong>で相談・登録できます。フリーター・未経験歓迎の求人が多数あります。</p>
+
+      <div class="aff-card top">
+        <div class="aff-rank r1">1</div>
+        <div class="aff-info">
+          <span class="aff-badge">未経験特化 No.1</span>
+          <h3>第二新卒エージェントneo</h3>
+          <p>フリーター・未経験歓迎。社会保険完備の正社員求人に特化。無料で就活をフルサポート。</p>
+        </div>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCN+8KELOI+3Y6M+63OYA" class="aff-btn" rel="nofollow" target="_blank">無料登録 →</a>
+      </div>
+
+      <!-- ===== A8アフィリエイト：トラッキング画像（1×1px） ===== -->
+      <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4AZNCN+8KELOI+3Y6M+63OYA" alt="">
+
+    </div><!-- /.article-body -->
+  </main>
+
+  <!-- ===== サイドバー ===== -->
+  <aside class="sidebar">
+    <!-- おすすめサービス -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">// おすすめ<span>サービス</span></div>
+      <div class="sidebar-card-body">
+        <div class="sidebar-rank-item">
+          <div class="s-rank">1</div>
+          <div><div class="s-name">第二新卒neo</div><span class="s-tag">未経験・フリーター特化</span></div>
+        </div>
+        <div class="sidebar-rank-item">
+          <div class="s-rank">2</div>
+          <div><div class="s-name">ハタラクティブ</div><span class="s-tag">内定率80%以上</span></div>
+        </div>
+        <div class="sidebar-rank-item">
+          <div class="s-rank">3</div>
+          <div><div class="s-name">マイナビ20's</div><span class="s-tag">20代専門</span></div>
+        </div>
+        <div class="sidebar-rank-item">
+          <div class="s-rank">4</div>
+          <div><div class="s-name">UZUZ</div><span class="s-tag">丁寧サポート</span></div>
+        </div>
+        <div class="sidebar-rank-item">
+          <div class="s-rank">5</div>
+          <div><div class="s-name">キャリアスタート</div><span class="s-tag">内定率86%</span></div>
+        </div>
+        <a href="index.html#ranking" class="sidebar-btn">全サービスを比較する →</a>
+      </div>
+    </div>
+
+    <!-- 関連記事 -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">// 関連<span>記事</span></div>
+      <div class="sidebar-card-body">
+        <ul class="related-list">
+          <li><a href="freeter-nenshu-sa.html">フリーターと正社員の年収差</a></li>
+          <li><a href="freeter-chokin.html">フリーターが貯金できない理由と解決策</a></li>
+          <li><a href="seishain-zeikin.html">正社員になったら税金はどう変わる？</a></li>
+          <li><a href="freeter-seishain.html">フリーターが正社員になる方法</a></li>
+          <li><a href="hitorigurase-seikatsuhi.html">20代の一人暮らしにかかる費用</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div><!-- /.container -->
+
+<!-- ===== フッター ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">チャレンジ<span>転職</span></div>
+    <div class="footer-desc">フリーター・未経験・高卒の方に向けた転職情報サイト。<br>あなたの一歩を、全力でサポートします。</div>
+    <div class="footer-links">
+      <a href="index.html">TOP</a>
+      <a href="about.html">運営者情報</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">免責事項</a>
+      <a href="mailto:your-email@gmail.com">お問い合わせ</a>
+    </div>
+    <div class="footer-copy">※本サイトはアフィリエイト広告を利用しています。<br>© 2026 チャレンジ転職 All Rights Reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
