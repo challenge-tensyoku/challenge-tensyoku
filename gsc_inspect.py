@@ -1,11 +1,15 @@
 """
-Google Indexing API - URLインデックス申請スクリプト
+Google Search Console URL Inspection API - インデックス状況チェック
 challenge-tensyoku用
 """
 
 import subprocess
 import json
 import sys
+import urllib.request
+import time
+
+SITE_URL = "https://challenge-tensyoku.com/"
 
 URLS = [
     "https://challenge-tensyoku.com/",
@@ -57,11 +61,13 @@ def get_access_token():
         sys.exit(1)
     return result.stdout.strip()
 
-def request_indexing(url, token):
-    import urllib.request
-    data = json.dumps({"url": url, "type": "URL_UPDATED"}).encode()
+def inspect_url(url, token):
+    data = json.dumps({
+        "inspectionUrl": url,
+        "siteUrl": SITE_URL,
+    }).encode()
     req = urllib.request.Request(
-        "https://indexing.googleapis.com/v3/urlNotifications:publish",
+        "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect",
         data=data,
         headers={
             "Authorization": f"Bearer {token}",
@@ -79,23 +85,53 @@ def request_indexing(url, token):
 def main():
     print("アクセストークン取得中...")
     token = get_access_token()
-    print(f"取得完了\n")
+    print("取得完了\n")
 
-    success = 0
-    failed = 0
+    indexed = []
+    not_indexed = []
+    errors = []
 
     total = len(URLS)
     for i, url in enumerate(URLS, 1):
-        print(f"[{i:2d}/{total}] {url.split('/')[-1] or 'index'}", end=" ... ")
-        status, body = request_indexing(url, token)
-        if status == 200:
-            print("OK")
-            success += 1
-        else:
-            print(f"NG ({status}): {body.get('error', {}).get('message', body)}")
-            failed += 1
+        label = url.split("/")[-1] or "index"
+        print(f"[{i:2d}/{total}] {label}", end=" ... ")
 
-    print(f"\n完了: 成功 {success}件 / 失敗 {failed}件")
+        status, body = inspect_url(url, token)
+
+        if status != 200:
+            msg = body.get("error", {}).get("message", str(body))
+            print(f"エラー ({status}): {msg}")
+            errors.append((label, msg))
+        else:
+            result = body.get("inspectionResult", {})
+            index_status = result.get("indexStatusResult", {})
+            verdict = index_status.get("verdict", "UNKNOWN")
+
+            if verdict == "PASS":
+                coverage = index_status.get("coverageState", "")
+                print(f"インデックス済み ({coverage})")
+                indexed.append(label)
+            else:
+                coverage = index_status.get("coverageState", verdict)
+                print(f"未インデックス ({coverage})")
+                not_indexed.append((label, coverage))
+
+        time.sleep(0.5)  # API負荷軽減
+
+    print(f"\n{'='*50}")
+    print(f"インデックス済み: {len(indexed)}件 / {total}件")
+    print(f"未インデックス : {len(not_indexed)}件")
+    print(f"エラー         : {len(errors)}件")
+
+    if not_indexed:
+        print(f"\n【未インデックス一覧】")
+        for label, reason in not_indexed:
+            print(f"  - {label} ({reason})")
+
+    if errors:
+        print(f"\n【エラー一覧】")
+        for label, msg in errors:
+            print(f"  - {label}: {msg}")
 
 if __name__ == "__main__":
     main()
