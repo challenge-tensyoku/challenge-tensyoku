@@ -78,13 +78,104 @@ footer{background:var(--dark);color:#6b7a99;padding:40px 24px 28px;}
 .footer-links{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:24px;font-size:0.8rem;}
 .footer-links a{color:#6b7a99;text-decoration:none;}
 .footer-copy{border-top:1px solid #1e2d4d;padding-top:20px;font-size:0.75rem;text-align:center;}
+
+  /* === HAMBURGER MENU (SP) === */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .sp-nav {
+    display: none;
+    position: fixed;
+    top: 56px; left: 0; right: 0;
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    padding: 8px 20px 16px;
+    flex-direction: column;
+    z-index: 99;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .sp-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    display: block;
+  }
+  .sp-nav a.nav-cta {
+    background: var(--primary);
+    color: #fff !important;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 6px;
+    margin-top: 10px;
+    border-bottom: none;
+  }
+  .sp-nav.open { display: flex; }
+  @media (max-width: 640px) {
+    .hamburger { display: flex; }
+  }
+
+  /* === SP FIXED BOTTOM CTA === */
+  .sp-cta-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 16px;
+    z-index: 200;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: 0 -2px 16px rgba(0,0,0,0.2);
+  }
+  .sp-cta-bar-text { font-size: 0.8rem; line-height: 1.4; }
+  .sp-cta-bar-btn {
+    background: #fff;
+    color: var(--primary);
+    font-weight: 900;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  @media (max-width: 768px) {
+    .sp-cta-bar { display: flex; }
+    body { padding-bottom: 58px; }
+  }
 </style>
 </head>
 <body>
 <header>
 <a class="logo" href="/"><div class="logo-icon">C</div>チャレンジ<span>転職</span></a>
 <nav><a href="/#ranking">転職サービス比較</a><a href="/#articles">記事一覧</a><a class="nav-cta" href="/#ranking">サービスを探す →</a></nav>
+<button class="hamburger" id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
 </header>
+<div id="sp-nav" class="sp-nav">
+<a href="/#ranking">転職サービス比較</a><a href="/#articles">記事一覧</a><a class="nav-cta" href="/#ranking">サービスを探す →</a>
+</div>
 <div class="breadcrumb"><div class="breadcrumb-inner"><a href="/">TOP</a> › <a href="#">面接対策</a> › よく聞かれる質問</div></div>
 <div class="article-hero">
 <div class="article-hero-inner">
@@ -203,5 +294,25 @@ footer{background:var(--dark);color:#6b7a99;padding:40px 24px 28px;}
 <div class="footer-copy">© 2026 チャレンジ転職</div>
 </div>
 </footer>
+
+<!-- SP FIXED BOTTOM CTA -->
+<div class="sp-cta-bar"><span class="sp-cta-bar-text">転職を始めるなら今。<strong style="color:#fff">完全無料</strong></span><a class="sp-cta-bar-btn" href="index.html#ranking">無料で相談する →</a></div>
+<script>
+(function(){
+  var btn = document.getElementById('hamburger');
+  var nav = document.getElementById('sp-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('open');
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('open');
+      nav.classList.remove('open');
+    });
+  });
+})();
+</script>
 </body>
 </html>

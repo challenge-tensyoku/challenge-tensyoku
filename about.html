@@ -318,6 +318,62 @@
     font-size: 0.75rem;
     text-align: center;
   }
+
+  /* === HAMBURGER MENU (SP) === */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-direction: column;
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .sp-nav {
+    display: none;
+    position: fixed;
+    top: 56px; left: 0; right: 0;
+    background: var(--white);
+    border-bottom: 2px solid var(--border);
+    padding: 8px 20px 16px;
+    flex-direction: column;
+    z-index: 99;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .sp-nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    display: block;
+  }
+  .sp-nav a.nav-cta {
+    background: var(--primary);
+    color: #fff !important;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 6px;
+    margin-top: 10px;
+    border-bottom: none;
+  }
+  .sp-nav.open { display: flex; }
+  @media (max-width: 640px) {
+    .hamburger { display: flex; }
+  }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"運営者情報 | チャレンジ転職","description":"チャレンジ転職の運営者情報・プロフィールページです。フリーター・未経験・高卒の方に向けた転職情報を発信しています。","url":"https://challenge-tensyoku.com/about.html","isPartOf":{"@type":"WebSite","name":"チャレンジ転職","url":"https://challenge-tensyoku.com/"}}</script></head>
 <body>
@@ -332,7 +388,13 @@
 <a href="index.html#articles">記事一覧</a>
 <a href="index.html#ranking">サービスを探す</a>
 </nav>
+<button class="hamburger" id="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
 </header>
+<div id="sp-nav" class="sp-nav">
+<a href="index.html#ranking">転職サービス比較</a>
+<a href="index.html#articles">記事一覧</a>
+<a href="index.html#ranking">サービスを探す</a>
+</div>
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
 <div class="breadcrumb-inner">
@@ -432,4 +494,21 @@
 </div>
 <div class="footer-copy">
       ※本サイトはアフィリエイト広告を利用しています。<br/>
-      © 2026 チ</div></div></footer></body></html>
+      © 2026 チ</div></div></footer><script>
+(function(){
+  var btn = document.getElementById('hamburger');
+  var nav = document.getElementById('sp-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', function(){
+    btn.classList.toggle('open');
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      btn.classList.remove('open');
+      nav.classList.remove('open');
+    });
+  });
+})();
+</script>
+</body></html>
