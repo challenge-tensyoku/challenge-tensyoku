@@ -81,5 +81,5 @@
 
   <!-- Name badge -->
   <rect x="50" y="386" width="220" height="26" rx="13" fill="#1a6ef5"/>
-  <text x="160" y="404" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">分析フクロウ</text>
+  <text x="160" y="404" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">コンサルフクロウ</text>
 </svg>

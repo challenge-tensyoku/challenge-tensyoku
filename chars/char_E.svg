@@ -63,5 +63,5 @@
 
   <!-- Name badge -->
   <rect x="56" y="386" width="208" height="26" rx="13" fill="#2a9ab8"/>
-  <text x="160" y="404" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">調整イルカ</text>
+  <text x="160" y="404" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">サポートイルカ</text>
 </svg>
