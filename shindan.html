@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="favicon.png" rel="apple-touch-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>転職タイプ診断 - あなたに向いてる職種は何の動物？ | チャレンジ転職</title>
+<link rel="canonical" href="https://challenge-tensyoku.com/shindan.html"/>
+<meta name="description" content="6問に答えるだけで、あなたに向いている職種タイプが動物キャラで分かる転職診断。フリーター・未経験・第二新卒の方向け。完全無料。"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --primary: #1a6ef5;
+  --primary-dark: #1358cc;
+  --primary-light: #e8f0fe;
+  --accent: #00c896;
+  --dark: #0f1f3d;
+  --text: #1a2640;
+  --muted: #6b7a99;
+  --border: #e2e8f4;
+  --light: #f7f9ff;
+  --white: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* HEADER */
+header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 12px rgba(26,110,245,0.07);
+}
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--dark);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-icon {
+  background: var(--primary);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.logo span { color: var(--primary); }
+nav { display: flex; align-items: center; gap: 24px; }
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--primary); }
+.nav-cta {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.82rem !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--primary-dark) !important; }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--dark);
+  border-radius: 2px;
+}
+.sp-nav {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0; right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  z-index: 99;
+  padding: 16px 24px 20px;
+}
+.sp-nav.open { display: block; }
+.sp-nav a {
+  display: block;
+  padding: 10px 0;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+.sp-nav a:last-child { border-bottom: none; }
+
+/* LAYOUT */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* START SCREEN */
+.start-hero {
+  background: linear-gradient(135deg, #0f1f3d 0%, #1a3a6e 60%, #1a6ef5 100%);
+  border-radius: 16px;
+  padding: 48px 28px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.start-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(26,110,245,0.3) 0%, transparent 65%);
+  pointer-events: none;
+}
+.start-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.start-emoji {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 16px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.start-title {
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.start-title em { font-style: normal; color: #7dd3fc; }
+.start-desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.chars-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.char-chip {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.start-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 48px;
+  font-size: 1rem;
+  font-weight: 900;
+  font-family: 'Noto Sans JP', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,200,150,0.4);
+  transition: all 0.2s;
+}
+.start-btn:hover {
+  background: #00b085;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,200,150,0.5);
+}
+.start-note {
+  margin-top: 12px;
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.55);
+}
+
+/* QUIZ */
+#quiz-screen { display: none; }
+.progress-wrap { margin-bottom: 20px; }
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 100px;
+  transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  width: 0%;
+}
+.q-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  margin-bottom: 14px;
+  animation: fadeUp 0.35s ease both;
+}
+.q-num {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.q-text {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--dark);
+  line-height: 1.5;
+}
+.options { display: flex; flex-direction: column; gap: 10px; }
+.opt-btn {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s;
+  line-height: 1.5;
+  animation: fadeUp 0.35s ease both;
+}
+.opt-btn:nth-child(1) { animation-delay: 0.05s; }
+.opt-btn:nth-child(2) { animation-delay: 0.1s; }
+.opt-btn:nth-child(3) { animation-delay: 0.15s; }
+.opt-btn:nth-child(4) { animation-delay: 0.2s; }
+.opt-btn:hover, .opt-btn.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* LOADING */
+#loading-screen {
+  display: none;
+  text-align: center;
+  padding: 80px 20px;
+}
+.loading-emoji {
+  font-size: 56px;
+  display: block;
+  margin-bottom: 20px;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.loading-text { font-size: 1rem; font-weight: 700; color: var(--muted); }
+
+/* RESULT */
+#result-screen { display: none; }
+.result-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 24px;
+  text-align: center;
+  margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.result-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+.r-label {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.r-emoji {
+  font-size: 80px;
+  display: block;
+  margin: 8px 0 16px;
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.r-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+.r-catch {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+  padding: 12px 16px;
+  background: var(--light);
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+  text-align: left;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.info-block {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.info-label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.info-text { font-size: 0.88rem; line-height: 1.8; color: var(--text); }
+.job-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.job-tag {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* AGENT SECTION */
+.agent-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 14px;
+  animation: fadeUp 0.5s ease 0.3s both;
+}
+.agent-section-title {
+  font-size: 0.9rem;
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.agent-section-sub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+.agent-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.agent-item:last-child { margin-bottom: 0; }
+.agent-top { display: flex; align-items: center; gap: 12px; }
+.agent-icon {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  background: var(--primary-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.agent-name { font-size: 0.9rem; font-weight: 900; color: var(--dark); }
+.agent-badge {
+  display: inline-block;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 900;
+  padding: 1px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+.agent-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+.agent-cv-btn {
+  display: block;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.88rem;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+.agent-cv-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(26,110,245,0.3);
+}
+.agent-cv-btn.secondary {
+  background: var(--white);
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+.agent-cv-btn.secondary:hover { background: var(--primary-light); }
+
+/* SHARE */
+.share-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  animation: fadeUp 0.5s ease 0.5s both;
+}
+.share-title { font-size: 0.9rem; font-weight: 900; color: var(--dark); margin-bottom: 14px; }
+.share-btn {
+  display: block; width: 100%;
+  background: #000; color: #fff;
+  border: none; border-radius: 8px;
+  padding: 13px;
+  font-size: 0.9rem; font-weight: 900;
+  font-family: 'Noto Sans JP', sans-serif;
+  cursor: pointer; transition: all 0.2s; margin-bottom: 10px;
+}
+.share-btn:hover { background: #333; transform: translateY(-1px); }
+.retry-btn {
+  display: block; width: 100%;
+  background: transparent; color: var(--muted);
+  border: 1.5px solid var(--border); border-radius: 8px;
+  padding: 12px;
+  font-size: 0.85rem; font-weight: 700;
+  font-family: 'Noto Sans JP', sans-serif;
+  cursor: pointer; transition: all 0.2s;
+}
+.retry-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  header { padding: 0 16px; }
+  nav { display: none; }
+  .hamburger { display: flex; }
+  .container { padding: 24px 16px 60px; }
+  .start-hero { padding: 36px 20px; }
+  .r-name { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <div class="logo-icon">C</div>
+    チャレンジ<span>転職</span>
+  </a>
+  <nav>
+    <a href="freeter-agent-osusume.html">エージェント比較</a>
+    <a href="freeter-seishain.html">フリーター就職</a>
+    <a href="shindan.html" class="nav-cta">診断する</a>
+  </nav>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<div class="sp-nav" id="sp-nav">
+  <a href="freeter-agent-osusume.html">エージェント比較</a>
+  <a href="freeter-seishain.html">フリーターから正社員へ</a>
+  <a href="shindan.html">転職タイプ診断</a>
+</div>
+
+<div class="container">
+
+  <!-- START -->
+  <div id="start-screen">
+    <div class="start-hero">
+      <div class="start-badge">FREE DIAGNOSIS · 約1分</div>
+      <span class="start-emoji">🐾</span>
+      <h1 class="start-title">あなたに向いてる職種、<br><em>何の動物タイプ？</em></h1>
+      <p class="start-desc">6問に答えるだけで、あなたの働き方のクセと<br>向いている職種タイプが分かります。</p>
+      <div class="chars-grid">
+        <span class="char-chip">🦁 営業ライオン</span>
+        <span class="char-chip">🦉 分析フクロウ</span>
+        <span class="char-chip">🐬 調整イルカ</span>
+        <span class="char-chip">🦊 戦略キツネ</span>
+        <span class="char-chip">🦫 エンジニアビーバー</span>
+        <span class="char-chip">🦚 クリエイタークジャク</span>
+        <span class="char-chip">🐺 フリーランス狼</span>
+        <span class="char-chip">🦒 ビジョナリーキリン</span>
+        <span class="char-chip">🐼 ニートパンダ</span>
+      </div>
+      <button class="start-btn" onclick="startQuiz()">診断スタート →</button>
+      <p class="start-note">無料 · 登録不要 · 約1分</p>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz-screen">
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span id="progress-text">Q1 / 6</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+    <div class="q-card">
+      <div class="q-num" id="q-num">Question 01</div>
+      <div class="q-text" id="q-text"></div>
+    </div>
+    <div class="options" id="options"></div>
+  </div>
+
+  <!-- LOADING -->
+  <div id="loading-screen">
+    <span class="loading-emoji">🔍</span>
+    <div class="loading-text">あなたのタイプを分析中…</div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result-screen">
+    <div class="result-card">
+      <div class="r-label">あなたの転職タイプは…</div>
+      <span class="r-emoji" id="r-emoji"></span>
+      <div class="r-name" id="r-name"></div>
+      <div class="r-catch" id="r-catch"></div>
+      <div class="info-block">
+        <div class="info-label">あるある</div>
+        <div class="info-text" id="r-desc"></div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">向いている職種</div>
+        <div class="job-tags" id="r-jobs"></div>
+      </div>
+    </div>
+    <div class="agent-section">
+      <div class="agent-section-title">📋 あなたのタイプにおすすめのエージェント</div>
+      <div class="agent-section-sub" id="agent-sub"></div>
+      <div id="agent-list"></div>
+    </div>
+    <div class="share-section">
+      <div class="share-title">結果をシェアする 🎉</div>
+      <button class="share-btn" onclick="shareResult()">𝕏（X）でシェア</button>
+      <button class="retry-btn" onclick="retryQuiz()">もう一度診断する</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const questions = [
+  {
+    text: "テンションが上がるのはどんなとき？",
+    options: [
+      { text: "📣 人を動かしたり、説得できたとき", scores: {A:3, H:1} },
+      { text: "📊 調べて「答え」を見つけられたとき", scores: {B:3, D:1} },
+      { text: "🤝 その場の空気がよくなったとき", scores: {C:3, H:1} },
+      { text: "💡 自分のアイデアが形になったとき", scores: {F:3, D:1, H:1} }
+    ]
+  },
+  {
+    text: "自分が一番「得意そう」だと思う場面は？",
+    options: [
+      { text: "🎤 人前で話したり、交渉する場面", scores: {A:3, H:1} },
+      { text: "🔍 調べたり、数字を整理する作業", scores: {B:3, E:1} },
+      { text: "🗂️ 間に入って、うまくまとめる役割", scores: {C:3, D:1} },
+      { text: "🗺️ アイデアを考えて計画を立てること", scores: {D:3, H:2} }
+    ]
+  },
+  {
+    text: "理想の働き方は？",
+    options: [
+      { text: "🚗 外回りや人と会うのが好き", scores: {A:3, H:1} },
+      { text: "💻 専門技術を黙々と磨きたい", scores: {E:3, B:1} },
+      { text: "🎨 作る・表現する仕事がしたい", scores: {F:3, G:1} },
+      { text: "🕊️ 自由と裁量を持って動きたい", scores: {G:3, H:1} }
+    ]
+  },
+  {
+    text: "転職で一番重視することは？",
+    options: [
+      { text: "💰 年収・インセンティブ", scores: {A:2, H:2} },
+      { text: "🏢 会社の安定性・福利厚生", scores: {C:2, B:1} },
+      { text: "⚖️ 仕事の裁量・自由度", scores: {G:3, F:1} },
+      { text: "🚀 ビジョンや成長環境", scores: {H:3, D:2} }
+    ]
+  },
+  {
+    text: "友達からどんな人だと思われてる？",
+    options: [
+      { text: "🔥 熱くて行動力がある", scores: {A:3, H:2} },
+      { text: "🧠 論理的で冷静", scores: {B:3, E:1, D:1} },
+      { text: "😊 気が利いてまとめてくれる", scores: {C:3, D:1} },
+      { text: "🎭 個性的でセンスがある", scores: {F:3, G:2} }
+    ]
+  },
+  {
+    text: "今の自分に一番近いのは？",
+    options: [
+      { text: "⚔️ 結果を出してガンガン上を目指したい", scores: {A:2, H:3} },
+      { text: "🔧 スキルを磨いて市場価値を上げたい", scores: {E:3, B:2, D:1} },
+      { text: "☕ 落ち着いた環境でじっくり働きたい", scores: {C:2, B:1} },
+      { text: "🛋️ 正直、まだ転職する気になれない", scores: {I:5} }
+    ]
+  }
+];
+
+const characters = {
+  A: {
+    emoji: '🦁', name: '営業ライオン',
+    catch: '「目標達成の瞬間だけが生きてる証明。たてがみが薄くなっても止まれない。」',
+    desc: '交渉・提案・クロージングが本能的に好き。数字を見るとスイッチが入る。飲み会の幹事はいつも自分。「熱量」が口癖。',
+    jobs: ['営業', '販売・接客', 'テレアポ', 'リクルーター'],
+    agentSub: '営業力を正当評価してくれる職場へ。インセンティブ制度が強い求人に強いエージェントを厳選。',
+    agents: [
+      { icon: '💼', name: '第二新卒エージェントneo', badge: 'メイン推奨', desc: 'フリーター・未経験でも営業職の内定実績多数。丁寧なサポートで初転職にも◎', url: 'https://px.a8.net/svt/ejp?a8mat=4AZNCN+8KELOI+3Y6M+63OYA', primary: true },
+      { icon: '🎯', name: 'ユメキャリ転職エージェント', badge: 'サブ推奨', desc: '営業・販売系の求人が豊富。年収アップを狙いたい人向け。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+8ZVVEQ+5PWS+BX3J6', primary: false }
+    ]
+  },
+  B: {
+    emoji: '🦉', name: '分析フクロウ',
+    catch: '「会議中もExcelは開いたまま。それが礼儀だと思ってる。」',
+    desc: 'データを見ると安心する。感情論で物事が決まる会議が地獄。資料の数字が0.1ズレても気づく。「根拠は？」が口癖。',
+    jobs: ['データ分析', 'コンサルタント', '経営企画', '調査・リサーチ'],
+    agentSub: '論理力・分析力が正当評価される職場へ。ロジカルな人材を求める企業への転職をサポート。',
+    agents: [
+      { icon: '📊', name: 'ユメキャリ転職エージェント', badge: 'メイン推奨', desc: 'コンサル・データ系の求人が充実。分析スキルが活きるポジションを紹介。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+8ZVVEQ+5PWS+BX3J6', primary: true },
+      { icon: '🔎', name: 'キミスカ', badge: 'サブ推奨', desc: 'スカウト型。分析能力を評価してスカウトが届く。受け身で進められる。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+D15N0I+24ZO+HV7V6', primary: false }
+    ]
+  },
+  C: {
+    emoji: '🐬', name: '調整イルカ',
+    catch: '「全員の顔色を読みすぎて、自分の顔色が一番悪い。」',
+    desc: '会議で誰かが沈黙すると自分が話し出す。「ちょっといいですか？」と声をかけられる頻度が異常。板挟みの回数でサンドイッチになれそう。',
+    jobs: ['人事・採用', '事務・庶務', 'PR・広報', 'カスタマーサポート'],
+    agentSub: '気遣い力が強みになる職場へ。人と関わる仕事で感謝される環境に転職しよう。',
+    agents: [
+      { icon: '🤝', name: '第二新卒エージェントneo', badge: 'メイン推奨', desc: '事務・人事職の求人多数。フリーター・未経験でも応募できる企業を紹介。', url: 'https://px.a8.net/svt/ejp?a8mat=4AZNCN+8KELOI+3Y6M+63OYA', primary: true },
+      { icon: '🌟', name: 'ユメキャリ就職エージェント', badge: 'サブ推奨', desc: '事務・サポート系に強い。丁寧なキャリアカウンセリングで希望の職場へ。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+90HB0I+5PWS+5YJRM', primary: false }
+    ]
+  },
+  D: {
+    emoji: '🦊', name: '戦略キツネ',
+    catch: '「なぜか周りに腹黒いと思われてるけど、ただ先を読んでるだけ。」',
+    desc: '3手先まで考えてから動く。無駄な作業が嫌い。「それやる意味ありますか？」を心の中で毎日思ってる。',
+    jobs: ['マーケティング', '経営企画', '事業開発', 'PMO'],
+    agentSub: '戦略的思考力が活かせる職場へ。企画・マーケ系の求人に強いエージェントを厳選。',
+    agents: [
+      { icon: '🦊', name: 'ユメキャリ転職エージェント', badge: 'メイン推奨', desc: 'マーケ・企画職への転職実績多数。戦略思考が武器になる職場を提案。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+8ZVVEQ+5PWS+BX3J6', primary: true },
+      { icon: '🔎', name: 'キミスカ', badge: 'サブ推奨', desc: 'スカウト型。企業側があなたの思考力を評価してオファーが来る。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+D15N0I+24ZO+HV7V6', primary: false }
+    ]
+  },
+  E: {
+    emoji: '🦫', name: 'エンジニアビーバー',
+    catch: '「作ったものが動いたとき、世界一になった気がする。」',
+    desc: '黙々と作るのが好き。完成度にこだわりすぎてリリースが遅れがち。「この処理もっと効率化できるな」が口癖。',
+    jobs: ['ITエンジニア', 'インフラ・SRE', 'プログラマー', 'データエンジニア'],
+    agentSub: '技術力が正当評価される職場へ。IT・エンジニア系求人で年収アップを狙おう。',
+    agents: [
+      { icon: '💻', name: 'ユメキャリ転職エージェント', badge: 'メイン推奨', desc: 'IT・エンジニア系の求人が充実。技術力を武器に年収アップを狙える。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+8ZVVEQ+5PWS+BX3J6', primary: true },
+      { icon: '🔎', name: 'キミスカ', badge: 'サブ推奨', desc: 'スカウト型。技術スキルを見た企業から直接オファーが来る。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+D15N0I+24ZO+HV7V6', primary: false }
+    ]
+  },
+  F: {
+    emoji: '🦚', name: 'クリエイタークジャク',
+    catch: '「街の看板のフォントが気になって立ち止まる。それの何が悪いんですか。」',
+    desc: '自分のポートフォリオより人のデザインが気になる。「なんかダサい」という感覚が誰より0.5秒早い。個性は武器だと信じてる。',
+    jobs: ['デザイナー', 'コピーライター', '映像・動画制作', 'SNSクリエイター'],
+    agentSub: '個性とセンスが評価される職場へ。クリエイティブ系求人への転職をサポート。',
+    agents: [
+      { icon: '🎨', name: 'キミスカ', badge: 'メイン推奨', desc: 'スカウト型。ポートフォリオを見た企業から直接オファーが届く。センスが武器になる。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+D15N0I+24ZO+HV7V6', primary: true },
+      { icon: '✨', name: 'ユメキャリ転職エージェント', badge: 'サブ推奨', desc: 'クリエイティブ・Web系の求人も扱う。幅広い選択肢から検討できる。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+8ZVVEQ+5PWS+BX3J6', primary: false }
+    ]
+  },
+  G: {
+    emoji: '🐺', name: 'フリーランス狼',
+    catch: '「確定申告の季節だけ、社会と繋がっている。」',
+    desc: '組織のルールより自分のルールで動きたい。「それ、なんで会社でやるんですか？」を心の中で毎日思ってる。孤独は全然平気。むしろ快適。',
+    jobs: ['フリーランス全般', 'IT・Web系', 'コンサルタント', '副業・複業'],
+    agentSub: '裁量大きめ・自由度高めの職場へ。まずは転職してスキルを積むのも選択肢。',
+    agents: [
+      { icon: '🐺', name: 'キミスカ', badge: 'メイン推奨', desc: 'スカウト型で裁量大きめのベンチャー・スタートアップ求人が多い。エージェント感が薄くて動きやすい。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+D15N0I+24ZO+HV7V6', primary: true },
+      { icon: '🔑', name: 'ユメキャリ転職エージェント', badge: 'サブ推奨', desc: '裁量ある職場への転職支援。まず正社員でスキルを磨くのも選択肢のひとつ。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+8ZVVEQ+5PWS+BX3J6', primary: false }
+    ]
+  },
+  H: {
+    emoji: '🦒', name: 'ビジョナリーキリン',
+    catch: '「5年後の絵は見えてる。問題は今日の仕事が手につかないこと。」',
+    desc: '大きな夢を語るのが好き。「将来どうなりたいか」の解像度が異常に高い。でも足元のタスク管理は苦手。理想が高すぎて現状とのギャップに悩む。',
+    jobs: ['経営・マネジメント', '事業開発', 'スタートアップ', 'コンサルタント'],
+    agentSub: 'ビジョンを語れる職場・成長環境へ。高い目標意識が活きるポジションを探そう。',
+    agents: [
+      { icon: '🚀', name: 'ユメキャリ転職エージェント', badge: 'メイン推奨', desc: 'スタートアップ・ベンチャー系の求人が充実。ビジョン重視の転職を全力サポート。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+8ZVVEQ+5PWS+BX3J6', primary: true },
+      { icon: '🔎', name: 'キミスカ', badge: 'サブ推奨', desc: 'スカウト型で成長企業からオファーが届く。上昇志向の人を求めている企業と出会える。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+D15N0I+24ZO+HV7V6', primary: false }
+    ]
+  },
+  I: {
+    emoji: '🐼', name: 'ニートパンダ',
+    catch: '「働く気はある。たぶん。」',
+    desc: '就活サイトを開いてすぐ閉じる日が3ヶ月続いてる。とりあえず笹食べてから考えようと思ってる。でも心のどこかでは「このままじゃヤバい」と分かってる。',
+    jobs: ['まず話を聞いてもらうだけでOK', '書類不要のエージェントあり', '面談だけでも無料'],
+    agentSub: 'まずは話を聞いてもらうだけでいい。動いた人から人生が変わります。',
+    agents: [
+      { icon: '🐼', name: '第二新卒エージェントneo', badge: '書類不要', desc: '面談だけでOK。就活経験ゼロでも相談可能。完全無料・最短1週間で内定実績あり。', url: 'https://px.a8.net/svt/ejp?a8mat=4AZNCN+8KELOI+3Y6M+63OYA', primary: true },
+      { icon: '🌟', name: 'ユメキャリ就職エージェント', badge: 'サブ推奨', desc: '未経験・フリーターでもOK。まず話を聞くだけでも大丈夫。プレッシャーなし。', url: 'https://px.a8.net/svt/ejp?a8mat=4B1G9K+90HB0I+5PWS+5YJRM', primary: false }
+    ]
+  }
+};
+
+const shareTexts = {
+  A: '転職タイプ診断やったら「🦁営業ライオン」だった\n\n「目標達成の瞬間だけが生きてる証明。たてがみが薄くなっても止まれない。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  B: '転職タイプ診断やったら「🦉分析フクロウ」だった\n\n「会議中もExcelは開いたまま。それが礼儀だと思ってる。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  C: '転職タイプ診断やったら「🐬調整イルカ」だった\n\n「全員の顔色を読みすぎて、自分の顔色が一番悪い。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  D: '転職タイプ診断やったら「🦊戦略キツネ」だった\n\n「なぜか腹黒いと思われてるけど、ただ先を読んでるだけ。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  E: '転職タイプ診断やったら「🦫エンジニアビーバー」だった\n\n「作ったものが動いたとき、世界一になった気がする。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  F: '転職タイプ診断やったら「🦚クリエイタークジャク」だった\n\n「街の看板のフォントが気になって立ち止まる。それの何が悪いんですか。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  G: '転職タイプ診断やったら「🐺フリーランス狼」だった\n\n「確定申告の季節だけ、社会と繋がっている。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  H: '転職タイプ診断やったら「🦒ビジョナリーキリン」だった\n\n「5年後の絵は見えてる。問題は今日の仕事が手につかないこと。」\n\nあなたは何タイプ？👇\n#転職タイプ診断',
+  I: '転職タイプ診断やったら「🐼ニートパンダ」だった\n\n「働く気はある。たぶん。」\n\n笑えない人はそろそろ動いた方がいいかも…👇\n#転職タイプ診断'
+};
+
+let currentQ = 0;
+let scores = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0};
+let resultType = null;
+
+function startQuiz() {
+  document.getElementById('start-screen').style.display = 'none';
+  document.getElementById('quiz-screen').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = questions[currentQ];
+  const total = questions.length;
+  const pct = Math.round((currentQ / total) * 100);
+
+  document.getElementById('q-num').textContent = 'Question ' + String(currentQ + 1).padStart(2, '0');
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('progress-text').textContent = 'Q' + (currentQ + 1) + ' / ' + total;
+  document.getElementById('progress-pct').textContent = pct + '%';
+  document.getElementById('progress-fill').style.width = pct + '%';
+
+  const card = document.querySelector('.q-card');
+  card.style.animation = 'none';
+  card.offsetHeight;
+  card.style.animation = 'fadeUp 0.35s ease both';
+
+  const optionsEl = document.getElementById('options');
+  optionsEl.innerHTML = '';
+  q.options.forEach(function(opt) {
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.textContent = opt.text;
+    btn.onclick = function() { selectOption(opt.scores, btn); };
+    optionsEl.appendChild(btn);
+  });
+}
+
+function selectOption(optScores, btn) {
+  document.querySelectorAll('.opt-btn').forEach(function(b) {
+    b.classList.remove('selected');
+    b.style.pointerEvents = 'none';
+  });
+  btn.classList.add('selected');
+
+  setTimeout(function() {
+    Object.keys(optScores).forEach(function(k) { scores[k] += optScores[k]; });
+    currentQ++;
+    if (currentQ < questions.length) {
+      showQuestion();
+      document.querySelectorAll('.opt-btn').forEach(function(b) { b.style.pointerEvents = ''; });
+    } else {
+      showLoading();
+    }
+  }, 350);
+}
+
+function showLoading() {
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('loading-screen').style.display = 'block';
+  setTimeout(showResult, 1600);
+}
+
+function showResult() {
+  var maxScore = -1;
+  var winner = 'A';
+  Object.keys(scores).forEach(function(k) {
+    if (scores[k] > maxScore) { maxScore = scores[k]; winner = k; }
+  });
+  resultType = winner;
+  var char = characters[winner];
+
+  document.getElementById('loading-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'block';
+
+  document.getElementById('r-emoji').textContent = char.emoji;
+  document.getElementById('r-name').textContent = char.name;
+  document.getElementById('r-catch').textContent = char.catch;
+  document.getElementById('r-desc').textContent = char.desc;
+
+  var jobsEl = document.getElementById('r-jobs');
+  jobsEl.innerHTML = char.jobs.map(function(j) {
+    return '<span class="job-tag">' + j + '</span>';
+  }).join('');
+
+  document.getElementById('agent-sub').textContent = char.agentSub;
+  var agentList = document.getElementById('agent-list');
+  agentList.innerHTML = char.agents.map(function(a) {
+    return '<div class="agent-item">' +
+      '<div class="agent-top">' +
+        '<div class="agent-icon">' + a.icon + '</div>' +
+        '<div class="agent-info">' +
+          '<div class="agent-name">' + a.name + '<span class="agent-badge">' + a.badge + '</span></div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="agent-desc">' + a.desc + '</div>' +
+      '<a href="' + a.url + '" class="agent-cv-btn ' + (a.primary ? '' : 'secondary') + '" target="_blank" rel="nofollow">' +
+        (a.primary ? '無料で相談してみる →' : '詳しく見る →') +
+      '</a>' +
+    '</div>';
+  }).join('');
+
+  window.scrollTo(0, 0);
+}
+
+function shareResult() {
+  var text = shareTexts[resultType] + '\nhttps://challenge-tensyoku.com/shindan.html';
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
+}
+
+function retryQuiz() {
+  currentQ = 0;
+  scores = {A:0,B:0,C:0,D:0,E:0,F:0,G:0,H:0,I:0};
+  resultType = null;
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('start-screen').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function toggleMenu() {
+  document.getElementById('sp-nav').classList.toggle('open');
+}
+</script>
+</body>
+</html>
