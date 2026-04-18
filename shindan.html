@@ -344,10 +344,16 @@ nav a:hover { color: var(--primary); }
   margin-bottom: 12px;
 }
 .r-emoji {
-  font-size: 80px;
   display: block;
-  margin: 8px 0 16px;
+  margin: 8px auto 16px;
+  width: 200px;
+  height: 263px;
   animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+.r-emoji img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 @keyframes popIn {
   0% { transform: scale(0); opacity: 0; }
@@ -682,7 +688,7 @@ const questions = [
 
 const characters = {
   A: {
-    emoji: '🦁', name: '営業ライオン',
+    emoji: '🦁', charFile: 'chars/char_C.svg', name: '営業ライオン',
     catch: '「目標達成の瞬間だけが生きてる証明。たてがみが薄くなっても止まれない。」',
     desc: '交渉・提案・クロージングが本能的に好き。数字を見るとスイッチが入る。飲み会の幹事はいつも自分。「熱量」が口癖。',
     jobs: ['営業', '販売・接客', 'テレアポ', 'リクルーター'],
@@ -693,7 +699,7 @@ const characters = {
     ]
   },
   B: {
-    emoji: '🦉', name: '分析フクロウ',
+    emoji: '🦉', charFile: 'chars/char_D.svg', name: '分析フクロウ',
     catch: '「会議中もExcelは開いたまま。それが礼儀だと思ってる。」',
     desc: 'データを見ると安心する。感情論で物事が決まる会議が地獄。資料の数字が0.1ズレても気づく。「根拠は？」が口癖。',
     jobs: ['データ分析', 'コンサルタント', '経営企画', '調査・リサーチ'],
@@ -704,7 +710,7 @@ const characters = {
     ]
   },
   C: {
-    emoji: '🐬', name: '調整イルカ',
+    emoji: '🐬', charFile: 'chars/char_E.svg', name: '調整イルカ',
     catch: '「全員の顔色を読みすぎて、自分の顔色が一番悪い。」',
     desc: '会議で誰かが沈黙すると自分が話し出す。「ちょっといいですか？」と声をかけられる頻度が異常。板挟みの回数でサンドイッチになれそう。',
     jobs: ['人事・採用', '事務・庶務', 'PR・広報', 'カスタマーサポート'],
@@ -715,7 +721,7 @@ const characters = {
     ]
   },
   D: {
-    emoji: '🦊', name: '戦略キツネ',
+    emoji: '🦊', charFile: 'chars/char_F.svg', name: '戦略キツネ',
     catch: '「なぜか周りに腹黒いと思われてるけど、ただ先を読んでるだけ。」',
     desc: '3手先まで考えてから動く。無駄な作業が嫌い。「それやる意味ありますか？」を心の中で毎日思ってる。',
     jobs: ['マーケティング', '経営企画', '事業開発', 'PMO'],
@@ -726,7 +732,7 @@ const characters = {
     ]
   },
   E: {
-    emoji: '🦫', name: 'エンジニアビーバー',
+    emoji: '🦫', charFile: 'chars/char_B.svg', name: 'エンジニアビーバー',
     catch: '「作ったものが動いたとき、世界一になった気がする。」',
     desc: '黙々と作るのが好き。完成度にこだわりすぎてリリースが遅れがち。「この処理もっと効率化できるな」が口癖。',
     jobs: ['ITエンジニア', 'インフラ・SRE', 'プログラマー', 'データエンジニア'],
@@ -737,7 +743,7 @@ const characters = {
     ]
   },
   F: {
-    emoji: '🦚', name: 'クリエイタークジャク',
+    emoji: '🦚', charFile: 'chars/char_G.svg', name: 'クリエイタークジャク',
     catch: '「街の看板のフォントが気になって立ち止まる。それの何が悪いんですか。」',
     desc: '自分のポートフォリオより人のデザインが気になる。「なんかダサい」という感覚が誰より0.5秒早い。個性は武器だと信じてる。',
     jobs: ['デザイナー', 'コピーライター', '映像・動画制作', 'SNSクリエイター'],
@@ -748,7 +754,7 @@ const characters = {
     ]
   },
   G: {
-    emoji: '🐺', name: 'フリーランス狼',
+    emoji: '🐺', charFile: 'chars/char_H.svg', name: 'フリーランス狼',
     catch: '「確定申告の季節だけ、社会と繋がっている。」',
     desc: '組織のルールより自分のルールで動きたい。「それ、なんで会社でやるんですか？」を心の中で毎日思ってる。孤独は全然平気。むしろ快適。',
     jobs: ['フリーランス全般', 'IT・Web系', 'コンサルタント', '副業・複業'],
@@ -759,7 +765,7 @@ const characters = {
     ]
   },
   H: {
-    emoji: '🦒', name: 'ビジョナリーキリン',
+    emoji: '🦒', charFile: 'chars/char_I.svg', name: 'ビジョナリーキリン',
     catch: '「5年後の絵は見えてる。問題は今日の仕事が手につかないこと。」',
     desc: '大きな夢を語るのが好き。「将来どうなりたいか」の解像度が異常に高い。でも足元のタスク管理は苦手。理想が高すぎて現状とのギャップに悩む。',
     jobs: ['経営・マネジメント', '事業開発', 'スタートアップ', 'コンサルタント'],
@@ -770,7 +776,7 @@ const characters = {
     ]
   },
   I: {
-    emoji: '🐼', name: 'ニートパンダ',
+    emoji: '🐼', charFile: 'chars/char_A.svg', name: 'ニートパンダ',
     catch: '「働く気はある。たぶん。」',
     desc: '就活サイトを開いてすぐ閉じる日が3ヶ月続いてる。とりあえず笹食べてから考えようと思ってる。でも心のどこかでは「このままじゃヤバい」と分かってる。',
     jobs: ['まず話を聞いてもらうだけでOK', '書類不要のエージェントあり', '面談だけでも無料'],
@@ -868,7 +874,7 @@ function showResult() {
   document.getElementById('loading-screen').style.display = 'none';
   document.getElementById('result-screen').style.display = 'block';
 
-  document.getElementById('r-emoji').textContent = char.emoji;
+  document.getElementById('r-emoji').innerHTML = '<img src="' + char.charFile + '" alt="' + char.name + '">';
   document.getElementById('r-name').textContent = char.name;
   document.getElementById('r-catch').textContent = char.catch;
   document.getElementById('r-desc').textContent = char.desc;

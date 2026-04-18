@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG (dark night room) -->
+  <rect width="320" height="420" fill="#0f1520" rx="24"/>
+
+  <!-- Window (moon outside) -->
+  <rect x="20" y="80" width="100" height="120" rx="8" fill="#1a2a4a" stroke="#2a3a5e" stroke-width="2.5"/>
+  <!-- Window cross bar -->
+  <line x1="70" y1="80" x2="70" y2="200" stroke="#2a3a5e" stroke-width="3"/>
+  <line x1="20" y1="140" x2="120" y2="140" stroke="#2a3a5e" stroke-width="3"/>
+  <!-- Moon -->
+  <circle cx="50" cy="120" r="20" fill="#FFD600" opacity="0.9"/>
+  <circle cx="60" cy="112" r="14" fill="#1a2a4a"/>
+  <!-- Stars outside window -->
+  <circle cx="96" cy="96" r="2" fill="white" opacity="0.8"/>
+  <circle cx="82" cy="104" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="104" cy="115" r="2" fill="white" opacity="0.7"/>
+  <circle cx="88" cy="172" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="36" cy="165" r="2" fill="white" opacity="0.7"/>
+  <!-- Window glow on scene -->
+  <rect x="20" y="80" width="100" height="120" rx="8" fill="#2a4a8a" opacity="0.1"/>
+
+  <!-- Desk -->
+  <rect x="28" y="310" width="264" height="14" rx="6" fill="#3a2a18" stroke="#2a1a0a" stroke-width="2"/>
+  <rect x="50" y="322" width="14" height="64" rx="5" fill="#3a2a18"/>
+  <rect x="256" y="322" width="14" height="64" rx="5" fill="#3a2a18"/>
+
+  <!-- Coffee mug -->
+  <rect x="246" y="276" width="34" height="36" rx="6" fill="#5a3a20" stroke="#3a2010" stroke-width="2"/>
+  <path d="M 280 282 Q 294 282 294 292 Q 294 302 280 302" stroke="#5a3a20" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <!-- Coffee liquid -->
+  <rect x="250" y="282" width="26" height="8" rx="3" fill="#2a1a08"/>
+  <!-- Steam -->
+  <path d="M 254 272 Q 257 264 254 256" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 264 272 Q 267 264 264 256" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 274 272 Q 277 264 274 256" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Laptop -->
+  <rect x="80" y="278" width="162" height="36" rx="8" fill="#2a2a3e" stroke="#4a4a6e" stroke-width="2"/>
+  <rect x="124" y="288" width="52" height="14" rx="4" fill="#1e1e2e"/>
+  <!-- Keyboard hint -->
+  <rect x="90" y="284" width="28" height="6" rx="2" fill="#1e1e2e" opacity="0.7"/>
+  <rect x="202" y="284" width="28" height="6" rx="2" fill="#1e1e2e" opacity="0.7"/>
+
+  <!-- Laptop screen (glowing in dark room) -->
+  <rect x="76" y="174" width="168" height="110" rx="10" fill="#2a2a3e" stroke="#4a4a6e" stroke-width="2.5"/>
+  <rect x="84" y="182" width="152" height="94" rx="6" fill="#0a0f1a"/>
+  <!-- Code on screen (lone wolf freelance work) -->
+  <rect x="92" y="190" width="6" height="6" rx="1" fill="#00c896" opacity="0.9"/>
+  <rect x="104" y="190" width="80" height="6" rx="2" fill="#4d9fff" opacity="0.8"/>
+  <rect x="92" y="202" width="6" height="6" rx="1" fill="#00c896" opacity="0.9"/>
+  <rect x="104" y="202" width="60" height="6" rx="2" fill="#e8e8e8" opacity="0.6"/>
+  <rect x="92" y="214" width="6" height="6" rx="1" fill="#ff7b72" opacity="0.9"/>
+  <rect x="104" y="214" width="90" height="6" rx="2" fill="#4d9fff" opacity="0.8"/>
+  <rect x="92" y="226" width="6" height="6" rx="1" fill="#00c896" opacity="0.9"/>
+  <rect x="104" y="226" width="50" height="6" rx="2" fill="#e8e8e8" opacity="0.6"/>
+  <rect x="92" y="238" width="6" height="6" rx="1" fill="#ff7b72" opacity="0.9"/>
+  <rect x="104" y="238" width="72" height="6" rx="2" fill="#FFD600" opacity="0.8"/>
+  <rect x="92" y="250" width="6" height="6" rx="1" fill="#00c896" opacity="0.9"/>
+  <rect x="104" y="250" width="38" height="6" rx="2" fill="#4d9fff" opacity="0.8"/>
+  <!-- Cursor -->
+  <rect x="144" y="250" width="3" height="10" rx="1" fill="white" opacity="0.9"/>
+  <!-- Screen glow on scene -->
+  <ellipse cx="160" cy="230" rx="80" ry="58" fill="#4d9fff" opacity="0.05"/>
+
+  <!-- Wolf body (hunched at laptop) -->
+  <ellipse cx="160" cy="288" rx="62" ry="42" fill="#6a7a8a" stroke="#4a5a6a" stroke-width="2.5"/>
+  <!-- Belly lighter patch -->
+  <ellipse cx="160" cy="298" rx="34" ry="24" fill="#b8c8d8"/>
+  <!-- Arms on keyboard -->
+  <rect x="88" y="282" width="28" height="30" rx="12" fill="#6a7a8a" stroke="#4a5a6a" stroke-width="2"/>
+  <rect x="204" y="282" width="28" height="30" rx="12" fill="#6a7a8a" stroke="#4a5a6a" stroke-width="2"/>
+  <!-- Paws on keyboard -->
+  <ellipse cx="102" cy="308" rx="18" ry="9" fill="#5a6a7a"/>
+  <ellipse cx="218" cy="308" rx="18" ry="9" fill="#5a6a7a"/>
+
+  <!-- Tail curled to side -->
+  <path d="M 210 315 Q 268 320 280 295 Q 292 270 270 260" stroke="#6a7a8a" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <!-- White tail tip -->
+  <circle cx="272" cy="258" r="12" fill="#c8d8e8"/>
+
+  <!-- Wolf head (looking at screen) -->
+  <circle cx="160" cy="222" r="50" fill="#6a7a8a" stroke="#4a5a6a" stroke-width="2.5"/>
+  <!-- Ears (pointy wolf ears) -->
+  <polygon points="130,180 118,148 148,178" fill="#6a7a8a" stroke="#4a5a6a" stroke-width="2"/>
+  <polygon points="134,180 124,155 148,178" fill="#d8899a"/>
+  <polygon points="190,180 202,148 172,178" fill="#6a7a8a" stroke="#4a5a6a" stroke-width="2"/>
+  <polygon points="186,180 196,155 172,178" fill="#d8899a"/>
+  <!-- Muzzle -->
+  <ellipse cx="160" cy="234" rx="26" ry="20" fill="#b8c8d8"/>
+  <!-- Eyes (tired but determined - slight bags) -->
+  <circle cx="140" cy="218" r="10" fill="white" stroke="#4a5a6a" stroke-width="1.5"/>
+  <circle cx="180" cy="218" r="10" fill="white" stroke="#4a5a6a" stroke-width="1.5"/>
+  <circle cx="141" cy="220" r="6" fill="#1a1a2e"/>
+  <circle cx="181" cy="220" r="6" fill="#1a1a2e"/>
+  <circle cx="143" cy="218" r="2" fill="white"/>
+  <circle cx="183" cy="218" r="2" fill="white"/>
+  <!-- Slight tired lines under eyes -->
+  <path d="M 130 226 Q 140 228 150 226" stroke="#4a5a6a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <path d="M 170 226 Q 180 228 190 226" stroke="#4a5a6a" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <!-- Nose -->
+  <ellipse cx="160" cy="232" rx="8" ry="6" fill="#2a2a3e"/>
+  <!-- Concentrated mouth -->
+  <path d="M 152 242 Q 160 246 168 242" stroke="#4a5a6a" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Headphones (lone wolf style) -->
+  <path d="M 112 216 Q 112 182 160 175 Q 208 182 208 216" stroke="#2a2a3e" stroke-width="5" fill="none"/>
+  <rect x="106" y="212" width="14" height="22" rx="6" fill="#2a2a3e"/>
+  <rect x="200" y="212" width="14" height="22" rx="6" fill="#2a2a3e"/>
+
+  <!-- Name badge -->
+  <rect x="48" y="388" width="224" height="26" rx="13" fill="#4a5a6a"/>
+  <text x="160" y="406" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">フリーランス狼</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG -->
+  <rect width="320" height="420" fill="#f5f0eb" rx="24"/>
+
+  <!-- Couch back -->
+  <rect x="28" y="262" width="264" height="56" rx="22" fill="#c4a884" stroke="#a87e58" stroke-width="2.5"/>
+  <!-- Couch seat -->
+  <rect x="28" y="302" width="264" height="72" rx="26" fill="#d4b896" stroke="#a87e58" stroke-width="2.5"/>
+  <!-- Cushion divider -->
+  <line x1="160" y1="304" x2="160" y2="372" stroke="#a87e58" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- Panda body (lying down on couch) -->
+  <ellipse cx="155" cy="300" rx="88" ry="46" fill="white" stroke="#222" stroke-width="3"/>
+  <!-- Black belly patch -->
+  <ellipse cx="155" cy="310" rx="48" ry="26" fill="#e8e8e8"/>
+
+  <!-- Left leg up in air -->
+  <ellipse cx="84" cy="258" rx="16" ry="28" fill="white" stroke="#222" stroke-width="2.5" transform="rotate(-20,84,258)"/>
+  <ellipse cx="72" cy="238" rx="14" ry="10" fill="#222"/>
+
+  <!-- Right arm (holding snack bag) -->
+  <ellipse cx="234" cy="265" rx="14" ry="25" fill="white" stroke="#222" stroke-width="2.5" transform="rotate(15,234,265)"/>
+
+  <!-- Snack bag -->
+  <rect x="244" y="226" width="50" height="64" rx="9" fill="#FFD600" stroke="#c9a500" stroke-width="2.5"/>
+  <rect x="248" y="238" width="42" height="2.5" rx="1" fill="#c9a500"/>
+  <rect x="248" y="246" width="42" height="2.5" rx="1" fill="#c9a500"/>
+  <text x="269" y="266" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="9" fill="#7a5c00" font-weight="900">SNACK</text>
+  <rect x="248" y="272" width="42" height="2.5" rx="1" fill="#c9a500"/>
+  <!-- Crumbs -->
+  <circle cx="228" cy="290" r="3" fill="#FFD600"/>
+  <circle cx="238" cy="282" r="2" fill="#FFD600"/>
+  <circle cx="220" cy="285" r="2.5" fill="#FFD600"/>
+
+  <!-- Panda head (at left, tilted back) -->
+  <circle cx="116" cy="258" r="60" fill="white" stroke="#222" stroke-width="3"/>
+  <!-- Black ears -->
+  <circle cx="70" cy="212" r="20" fill="#222"/>
+  <circle cx="162" cy="212" r="20" fill="#222"/>
+  <!-- Inner ear pink -->
+  <circle cx="70" cy="212" r="10" fill="#f8c8c8"/>
+  <circle cx="162" cy="212" r="10" fill="#f8c8c8"/>
+  <!-- Eye patches -->
+  <ellipse cx="96" cy="252" rx="18" ry="16" fill="#222"/>
+  <ellipse cx="138" cy="252" rx="18" ry="16" fill="#222"/>
+  <!-- Eyes – happy squint -->
+  <path d="M 87 251 Q 96 244 105 251" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 129 251 Q 138 244 147 251" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Nose -->
+  <ellipse cx="117" cy="267" rx="9" ry="6" fill="#222"/>
+  <!-- Mouth blissful -->
+  <path d="M 108 275 Q 117 284 126 275" stroke="#222" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Blush -->
+  <ellipse cx="83" cy="270" rx="11" ry="7" fill="#ff9999" opacity="0.6"/>
+  <ellipse cx="149" cy="270" rx="11" ry="7" fill="#ff9999" opacity="0.6"/>
+
+  <!-- ZZZ bubbles -->
+  <circle cx="186" cy="192" r="10" fill="white" stroke="#ccc" stroke-width="1.5"/>
+  <text x="186" y="197" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#aaa" font-weight="bold">z</text>
+  <circle cx="206" cy="168" r="14" fill="white" stroke="#ccc" stroke-width="1.5"/>
+  <text x="206" y="174" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#aaa" font-weight="bold">z</text>
+  <circle cx="230" cy="139" r="18" fill="white" stroke="#ccc" stroke-width="1.5"/>
+  <text x="230" y="146" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#aaa" font-weight="bold">z</text>
+
+  <!-- Name badge -->
+  <rect x="55" y="386" width="210" height="26" rx="13" fill="#222"/>
+  <text x="160" y="404" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">ニートパンダ</text>
+</svg>

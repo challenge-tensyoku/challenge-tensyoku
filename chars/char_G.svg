@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG (bright creative studio) -->
+  <rect width="320" height="420" fill="#fff5ff" rx="24"/>
+
+  <!-- Canvas/easel on left -->
+  <rect x="18" y="100" width="86" height="108" rx="6" fill="white" stroke="#ccc" stroke-width="2.5"/>
+  <!-- Easel legs -->
+  <line x1="30" y1="207" x2="18" y2="240" stroke="#aaa" stroke-width="2.5"/>
+  <line x1="92" y1="207" x2="104" y2="240" stroke="#aaa" stroke-width="2.5"/>
+  <!-- Painting on canvas -->
+  <rect x="24" y="106" width="74" height="96" rx="4" fill="#f0f0ff"/>
+  <!-- Abstract painting strokes -->
+  <path d="M 28 140 Q 50 120 74 145 Q 90 160 68 170" stroke="#ff6b9d" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 32 160 Q 55 148 78 165" stroke="#1a6ef5" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="52" cy="125" r="10" fill="#FFD600" opacity="0.8"/>
+  <circle cx="80" cy="180" r="8" fill="#00c896" opacity="0.7"/>
+  <path d="M 28 185 Q 60 175 90 188" stroke="#9b59b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Color paint splatters in BG -->
+  <circle cx="274" cy="108" r="14" fill="#ff6b9d" opacity="0.3"/>
+  <circle cx="260" cy="132" r="8" fill="#FFD600" opacity="0.35"/>
+  <circle cx="290" cy="140" r="10" fill="#00c896" opacity="0.3"/>
+  <circle cx="285" cy="90" r="6" fill="#1a6ef5" opacity="0.3"/>
+  <circle cx="264" cy="168" r="5" fill="#9b59b6" opacity="0.3"/>
+
+  <!-- Peacock body -->
+  <ellipse cx="170" cy="292" rx="55" ry="46" fill="#0d7a4a" stroke="#095c36" stroke-width="2.5"/>
+  <!-- Belly (teal shimmer) -->
+  <ellipse cx="170" cy="302" rx="30" ry="28" fill="#00c896" opacity="0.8"/>
+
+  <!-- Arms/wings -->
+  <!-- Right arm (holding paintbrush) -->
+  <rect x="212" y="270" width="22" height="52" rx="11" fill="#0d7a4a" stroke="#095c36" stroke-width="2"/>
+  <!-- Paintbrush -->
+  <rect x="234" y="230" width="8" height="48" rx="3" fill="#8B5C2A" stroke="#5c3a14" stroke-width="1.5"/>
+  <rect x="234" y="272" width="8" height="12" rx="2" fill="#aaa" stroke="#888" stroke-width="1"/>
+  <!-- Brush tip with paint -->
+  <ellipse cx="238" cy="287" rx="5" ry="9" fill="#ff6b9d"/>
+
+  <!-- Left arm (holding palette) -->
+  <rect x="88" y="272" width="22" height="50" rx="11" fill="#0d7a4a" stroke="#095c36" stroke-width="2"/>
+  <!-- Color palette -->
+  <ellipse cx="72" cy="272" rx="32" ry="22" fill="#c8a870" stroke="#9a7840" stroke-width="2"/>
+  <circle cx="58" cy="266" r="7" fill="#ff6b9d"/>
+  <circle cx="72" cy="260" r="7" fill="#FFD600"/>
+  <circle cx="86" cy="266" r="7" fill="#1a6ef5"/>
+  <circle cx="58" cy="280" r="7" fill="#00c896"/>
+  <circle cx="80" cy="280" r="6" fill="#9b59b6"/>
+  <!-- Thumb hole -->
+  <circle cx="72" cy="272" r="6" fill="white" stroke="#9a7840" stroke-width="1.5"/>
+
+  <!-- Legs -->
+  <rect x="142" y="328" width="22" height="50" rx="10" fill="#095c36"/>
+  <rect x="176" y="328" width="22" height="50" rx="10" fill="#095c36"/>
+  <!-- Feet -->
+  <ellipse cx="153" cy="378" rx="16" ry="8" fill="#2a8a5a"/>
+  <ellipse cx="187" cy="378" rx="16" ry="8" fill="#2a8a5a"/>
+
+  <!-- Peacock head -->
+  <circle cx="170" cy="224" r="46" fill="#0d7a4a" stroke="#095c36" stroke-width="2.5"/>
+  <!-- Neck -->
+  <rect x="150" y="258" width="40" height="34" rx="14" fill="#0d7a4a" stroke="#095c36" stroke-width="2"/>
+
+  <!-- Peacock crown feathers (on head) -->
+  <line x1="158" y1="180" x2="150" y2="150" stroke="#00c896" stroke-width="3"/>
+  <circle cx="150" cy="147" r="7" fill="#1a6ef5"/>
+  <line x1="170" y1="178" x2="170" y2="142" stroke="#00c896" stroke-width="3"/>
+  <circle cx="170" cy="139" r="7" fill="#FFD600"/>
+  <line x1="182" y1="180" x2="190" y2="150" stroke="#00c896" stroke-width="3"/>
+  <circle cx="190" cy="147" r="7" fill="#ff6b9d"/>
+  <line x1="154" y1="182" x2="142" y2="156" stroke="#00c896" stroke-width="2"/>
+  <circle cx="141" cy="154" r="5" fill="#9b59b6"/>
+  <line x1="186" y1="182" x2="198" y2="156" stroke="#00c896" stroke-width="2"/>
+  <circle cx="199" cy="154" r="5" fill="#E8731A"/>
+
+  <!-- Face -->
+  <!-- Eyes (large, expressive) -->
+  <circle cx="152" cy="222" r="11" fill="white" stroke="#095c36" stroke-width="2"/>
+  <circle cx="188" cy="222" r="11" fill="white" stroke="#095c36" stroke-width="2"/>
+  <circle cx="154" cy="224" r="6.5" fill="#2a1a00"/>
+  <circle cx="190" cy="224" r="6.5" fill="#2a1a00"/>
+  <circle cx="156" cy="221" r="2.5" fill="white"/>
+  <circle cx="192" cy="221" r="2.5" fill="white"/>
+  <!-- Beak -->
+  <polygon points="170,232 163,242 177,242" fill="#c47a00" stroke="#9a5800" stroke-width="1.5"/>
+  <!-- Happy brow -->
+  <path d="M 142 212 Q 152 207 162 212" stroke="#095c36" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 178 212 Q 188 207 198 212" stroke="#095c36" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Paint dots on character (creative mess) -->
+  <circle cx="160" cy="310" r="4" fill="#ff6b9d" opacity="0.7"/>
+  <circle cx="180" cy="300" r="3" fill="#FFD600" opacity="0.7"/>
+  <circle cx="195" cy="315" r="3.5" fill="#1a6ef5" opacity="0.7"/>
+
+  <!-- Name badge -->
+  <rect x="28" y="388" width="264" height="26" rx="13" fill="#0d7a4a"/>
+  <text x="160" y="406" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="13" font-weight="bold" fill="white">クリエイタークジャク</text>
+</svg>

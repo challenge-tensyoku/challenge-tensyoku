@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG warm -->
+  <rect width="320" height="420" fill="#fff8ee" rx="24"/>
+
+  <!-- Briefcase (right hand) -->
+  <rect x="234" y="288" width="60" height="46" rx="8" fill="#5c3a14" stroke="#3a2008" stroke-width="2.5"/>
+  <rect x="252" y="280" width="24" height="14" rx="5" fill="none" stroke="#3a2008" stroke-width="3"/>
+  <line x1="234" y1="308" x2="294" y2="308" stroke="#3a2008" stroke-width="2"/>
+  <!-- Briefcase clasp -->
+  <rect x="258" y="304" width="12" height="8" rx="3" fill="#c9a500" stroke="#9a7a00" stroke-width="1.5"/>
+
+  <!-- Right arm holding briefcase -->
+  <rect x="220" y="272" width="24" height="56" rx="12" fill="#D4A830" stroke="#a87e20" stroke-width="2"/>
+
+  <!-- Phone (left hand/ear) -->
+  <rect x="28" y="208" width="30" height="52" rx="8" fill="#2a2a2a" stroke="#111" stroke-width="2"/>
+  <rect x="33" y="215" width="20" height="32" rx="3" fill="#4a8fff" opacity="0.8"/>
+  <!-- Signal waves from phone -->
+  <path d="M 14 196 Q 10 215 14 234" stroke="#00c896" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <path d="M 6 190 Q 0 215 6 240" stroke="#00c896" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.5"/>
+
+  <!-- Left arm holding phone to ear -->
+  <rect x="70" y="200" width="24" height="62" rx="12" fill="#D4A830" stroke="#a87e20" stroke-width="2" transform="rotate(-15,82,231)"/>
+
+  <!-- Lion body (torso) -->
+  <rect x="92" y="258" width="136" height="120" rx="20" fill="#D4A830" stroke="#a87e20" stroke-width="3"/>
+  <!-- Suit jacket -->
+  <polygon points="128,258 160,280 192,258 192,360 128,360" fill="#1a1a2e"/>
+  <!-- Shirt/tie -->
+  <polygon points="150,270 160,282 170,270 165,320 155,320" fill="white"/>
+  <polygon points="155,282 160,296 165,282 163,330 157,330" fill="#c0392b"/>
+
+  <!-- Lion legs -->
+  <rect x="106" y="358" width="40" height="44" rx="12" fill="#D4A830" stroke="#a87e20" stroke-width="2"/>
+  <rect x="174" y="358" width="40" height="44" rx="12" fill="#D4A830" stroke="#a87e20" stroke-width="2"/>
+  <!-- Shoes -->
+  <ellipse cx="126" cy="400" rx="24" ry="10" fill="#1a1a2e"/>
+  <ellipse cx="194" cy="400" rx="24" ry="10" fill="#1a1a2e"/>
+
+  <!-- Lion mane -->
+  <circle cx="160" cy="200" r="74" fill="#c47a00" stroke="#9a5800" stroke-width="2"/>
+  <!-- Mane detail (darker outer ring) -->
+  <circle cx="160" cy="200" r="74" fill="none" stroke="#7a4400" stroke-width="4" stroke-dasharray="18,8"/>
+
+  <!-- Lion head (face) -->
+  <circle cx="160" cy="200" r="56" fill="#D4A830" stroke="#a87e20" stroke-width="2.5"/>
+  <!-- Muzzle area -->
+  <ellipse cx="160" cy="215" rx="28" ry="20" fill="#e8c068"/>
+  <!-- Eyes (confident) -->
+  <circle cx="138" cy="196" r="10" fill="white" stroke="#333" stroke-width="1.5"/>
+  <circle cx="182" cy="196" r="10" fill="white" stroke="#333" stroke-width="1.5"/>
+  <circle cx="140" cy="198" r="6" fill="#3a2000"/>
+  <circle cx="184" cy="198" r="6" fill="#3a2000"/>
+  <circle cx="142" cy="196" r="2" fill="white"/>
+  <circle cx="186" cy="196" r="2" fill="white"/>
+  <!-- Eyebrows (confident) -->
+  <path d="M 128 186 Q 138 182 148 186" stroke="#8B5C00" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 172 186 Q 182 182 192 186" stroke="#8B5C00" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Nose -->
+  <ellipse cx="160" cy="210" rx="10" ry="7" fill="#8B3A00"/>
+  <!-- Confident smile -->
+  <path d="M 145 222 Q 160 234 175 222" stroke="#5c2800" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Whisker dots -->
+  <circle cx="136" cy="215" r="2.5" fill="#a87e20"/>
+  <circle cx="128" cy="219" r="2.5" fill="#a87e20"/>
+  <circle cx="184" cy="215" r="2.5" fill="#a87e20"/>
+  <circle cx="192" cy="219" r="2.5" fill="#a87e20"/>
+  <!-- Lion ears -->
+  <path d="M 108 152 L 94 124 L 130 148" fill="#D4A830" stroke="#a87e20" stroke-width="2"/>
+  <path d="M 212 152 L 226 124 L 190 148" fill="#D4A830" stroke="#a87e20" stroke-width="2"/>
+
+  <!-- Speech bubble -->
+  <rect x="176" y="112" width="118" height="44" rx="14" fill="white" stroke="#ddd" stroke-width="2"/>
+  <polygon points="188,152 180,168 200,152" fill="white" stroke="#ddd" stroke-width="1"/>
+  <text x="235" y="132" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,sans-serif" font-size="12" fill="#333" font-weight="bold">はい！必ず</text>
+  <text x="235" y="148" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,sans-serif" font-size="12" fill="#333" font-weight="bold">決めます！</text>
+
+  <!-- Name badge -->
+  <rect x="62" y="388" width="196" height="26" rx="13" fill="#c47a00"/>
+  <text x="160" y="406" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">営業ライオン</text>
+</svg>

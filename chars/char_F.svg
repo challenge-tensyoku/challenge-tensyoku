@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG -->
+  <rect width="320" height="420" fill="#fff9f0" rx="24"/>
+
+  <!-- Whiteboard on wall -->
+  <rect x="24" y="80" width="220" height="160" rx="10" fill="white" stroke="#ccc" stroke-width="3"/>
+  <!-- Whiteboard frame (top/sides) -->
+  <rect x="24" y="80" width="220" height="10" rx="5" fill="#bbb"/>
+  <!-- Whiteboard tray -->
+  <rect x="24" y="232" width="220" height="8" rx="3" fill="#bbb"/>
+
+  <!-- Strategy diagram on board -->
+  <!-- Goal circle (center) -->
+  <circle cx="134" cy="162" r="24" fill="none" stroke="#1a6ef5" stroke-width="2.5"/>
+  <text x="134" y="158" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,sans-serif" font-size="9" fill="#1a6ef5" font-weight="bold">目標</text>
+  <text x="134" y="170" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,sans-serif" font-size="9" fill="#1a6ef5" font-weight="bold">達成</text>
+
+  <!-- Step circles -->
+  <circle cx="72" cy="128" r="16" fill="#FFD600" stroke="#c9a500" stroke-width="2"/>
+  <text x="72" y="132" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#7a5c00" font-weight="bold">① </text>
+  <circle cx="196" cy="128" r="16" fill="#00c896" stroke="#009e76" stroke-width="2"/>
+  <text x="196" y="132" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="white" font-weight="bold">②</text>
+  <circle cx="72" cy="196" r="16" fill="#ff6b6b" stroke="#cc4444" stroke-width="2"/>
+  <text x="72" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="white" font-weight="bold">③</text>
+  <circle cx="196" cy="196" r="16" fill="#9b59b6" stroke="#7a3a9a" stroke-width="2"/>
+  <text x="196" y="200" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="white" font-weight="bold">④</text>
+
+  <!-- Arrows connecting to center -->
+  <line x1="88" y1="133" x2="114" y2="148" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="180" y1="133" x2="154" y2="148" stroke="#555" stroke-width="2"/>
+  <line x1="88" y1="196" x2="110" y2="178" stroke="#555" stroke-width="2"/>
+  <line x1="180" y1="196" x2="158" y2="178" stroke="#555" stroke-width="2"/>
+  <!-- Arrow tips -->
+  <polygon points="114,148 108,142 120,142" fill="#555"/>
+  <polygon points="154,148 148,142 160,142" fill="#555"/>
+  <polygon points="110,178 104,184 116,184" fill="#555"/>
+  <polygon points="158,178 152,184 164,184" fill="#555"/>
+
+  <!-- Exclamation mark (ah-ha moment) -->
+  <text x="210" y="108" font-family="Arial Black,sans-serif" font-size="28" fill="#FFD600" font-weight="900">!</text>
+
+  <!-- Fox body -->
+  <ellipse cx="240" cy="300" rx="50" ry="44" fill="#E8731A" stroke="#c05810" stroke-width="2.5"/>
+  <!-- Belly (white) -->
+  <ellipse cx="240" cy="312" rx="28" ry="26" fill="#fff4e0"/>
+
+  <!-- Left arm (at side, thinking) -->
+  <rect x="182" y="285" width="22" height="48" rx="11" fill="#E8731A" stroke="#c05810" stroke-width="2"/>
+  <!-- Right arm (holding marker toward board) -->
+  <rect x="274" y="268" width="20" height="54" rx="10" fill="#E8731A" stroke="#c05810" stroke-width="2" transform="rotate(-30,284,295)"/>
+  <!-- Marker in right hand -->
+  <rect x="262" y="228" width="10" height="36" rx="4" fill="#1a6ef5" stroke="#1050cc" stroke-width="1.5" transform="rotate(-30,267,246)"/>
+  <polygon points="262,264 272,264 267,278" fill="#1a1a8a" transform="rotate(-30,267,264)"/>
+
+  <!-- Fox tail (big fluffy) -->
+  <ellipse cx="290" cy="330" rx="34" ry="52" fill="#E8731A" stroke="#c05810" stroke-width="2" transform="rotate(20,290,330)"/>
+  <!-- White tail tip -->
+  <ellipse cx="306" cy="358" rx="18" ry="24" fill="white" stroke="#e8d0b8" stroke-width="1.5" transform="rotate(20,306,358)"/>
+
+  <!-- Fox legs -->
+  <rect x="210" y="330" width="26" height="48" rx="12" fill="#E8731A" stroke="#c05810" stroke-width="2"/>
+  <rect x="246" y="330" width="26" height="48" rx="12" fill="#E8731A" stroke="#c05810" stroke-width="2"/>
+  <!-- Paws -->
+  <ellipse cx="223" cy="378" rx="16" ry="9" fill="#c05810"/>
+  <ellipse cx="259" cy="378" rx="16" ry="9" fill="#c05810"/>
+
+  <!-- Fox head -->
+  <ellipse cx="240" cy="240" rx="50" ry="46" fill="#E8731A" stroke="#c05810" stroke-width="2.5"/>
+  <!-- Ears -->
+  <polygon points="204,212 196,176 224,208" fill="#E8731A" stroke="#c05810" stroke-width="2"/>
+  <polygon points="208,210 200,182 224,208" fill="#ff9999"/>
+  <polygon points="276,212 284,176 256,208" fill="#E8731A" stroke="#c05810" stroke-width="2"/>
+  <polygon points="272,210 280,182 256,208" fill="#ff9999"/>
+  <!-- White muzzle -->
+  <ellipse cx="240" cy="252" rx="26" ry="20" fill="#fff4e0"/>
+  <!-- Eyes (cunning, narrow) -->
+  <ellipse cx="220" cy="238" rx="11" ry="9" fill="white" stroke="#333" stroke-width="1.5"/>
+  <ellipse cx="260" cy="238" rx="11" ry="9" fill="white" stroke="#333" stroke-width="1.5"/>
+  <circle cx="222" cy="240" r="6" fill="#3a2000"/>
+  <circle cx="262" cy="240" r="6" fill="#3a2000"/>
+  <circle cx="224" cy="238" r="2" fill="white"/>
+  <circle cx="264" cy="238" r="2" fill="white"/>
+  <!-- Eyebrows (smirk) -->
+  <path d="M 210 228 Q 220 224 230 228" stroke="#8B3A00" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 250 226 Q 260 222 270 228" stroke="#8B3A00" stroke-width="2.5" fill="none" stroke-linecap="round" transform="rotate(-5,260,227)"/>
+  <!-- Smirk -->
+  <path d="M 228 258 Q 240 266 255 260" stroke="#8B3A00" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Nose (small triangle) -->
+  <polygon points="240,252 235,258 245,258" fill="#c05810"/>
+
+  <!-- Name badge -->
+  <rect x="58" y="388" width="204" height="26" rx="13" fill="#E8731A"/>
+  <text x="160" y="406" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">戦略キツネ</text>
+</svg>

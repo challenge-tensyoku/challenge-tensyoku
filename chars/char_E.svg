@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG (sky/ocean teal) -->
+  <rect width="320" height="420" fill="#e8f8fc" rx="24"/>
+
+  <!-- Person A (left, being connected) -->
+  <circle cx="38" cy="230" r="18" fill="#ffcc88" stroke="#d4a060" stroke-width="2"/>
+  <rect x="22" y="248" width="32" height="44" rx="10" fill="#ff6b6b" stroke="#d44" stroke-width="2"/>
+  <!-- A's raised hand toward dolphin -->
+  <line x1="50" y1="258" x2="80" y2="250" stroke="#d4a060" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Person B (right, being connected) -->
+  <circle cx="282" cy="230" r="18" fill="#ffcc88" stroke="#d4a060" stroke-width="2"/>
+  <rect x="266" y="248" width="32" height="44" rx="10" fill="#4d9fff" stroke="#2a6fcc" stroke-width="2"/>
+  <!-- B's raised hand toward dolphin -->
+  <line x1="270" y1="258" x2="240" y2="250" stroke="#d4a060" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Connection arc between A and B (dotted line) -->
+  <path d="M 58 235 Q 160 175 262 235" stroke="#00c896" stroke-width="2.5" fill="none" stroke-dasharray="8,5" stroke-linecap="round"/>
+
+  <!-- Dolphin body (center, horizontal) -->
+  <ellipse cx="160" cy="255" rx="75" ry="42" fill="#4ac8e8" stroke="#2a9ab8" stroke-width="3"/>
+  <!-- Belly (lighter) -->
+  <ellipse cx="160" cy="265" rx="45" ry="24" fill="#a8e8f8"/>
+
+  <!-- Dorsal fin -->
+  <polygon points="160,213 148,238 172,238" fill="#3ab8d8" stroke="#2a9ab8" stroke-width="2"/>
+
+  <!-- Flippers (arms spread wide) -->
+  <!-- Left flipper -->
+  <ellipse cx="88" cy="250" rx="38" ry="16" fill="#3ab8d8" stroke="#2a9ab8" stroke-width="2" transform="rotate(-20,88,250)"/>
+  <!-- Right flipper -->
+  <ellipse cx="232" cy="250" rx="38" ry="16" fill="#3ab8d8" stroke="#2a9ab8" stroke-width="2" transform="rotate(20,232,250)"/>
+
+  <!-- Tail fin -->
+  <path d="M 235 260 Q 264 248 278 265 Q 264 255 248 272 Q 264 270 278 285 Q 264 270 235 262" fill="#3ab8d8" stroke="#2a9ab8" stroke-width="2"/>
+
+  <!-- Dolphin head -->
+  <circle cx="100" cy="242" r="48" fill="#4ac8e8" stroke="#2a9ab8" stroke-width="2.5"/>
+  <!-- Snout/beak -->
+  <ellipse cx="60" cy="248" rx="32" ry="14" fill="#4ac8e8" stroke="#2a9ab8" stroke-width="2"/>
+  <!-- Smile line -->
+  <path d="M 36 252 Q 60 262 84 252" stroke="#2a9ab8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Eye (big happy) -->
+  <circle cx="88" cy="233" r="12" fill="white" stroke="#2a9ab8" stroke-width="2"/>
+  <circle cx="90" cy="235" r="7" fill="#1a2a3a"/>
+  <circle cx="92" cy="232" r="2.5" fill="white"/>
+  <!-- Cheek glow -->
+  <ellipse cx="76" cy="246" rx="10" ry="6" fill="#ff9999" opacity="0.5"/>
+
+  <!-- Sparkle/heart connecting symbols -->
+  <text x="160" y="180" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="#00c896">✦</text>
+  <text x="120" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#FFD600">✦</text>
+  <text x="200" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#ff6b9d">✦</text>
+
+  <!-- "橋渡し" label above arc -->
+  <rect x="120" y="148" width="80" height="22" rx="11" fill="white" stroke="#00c896" stroke-width="2"/>
+  <text x="160" y="163" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,sans-serif" font-size="12" fill="#00c896" font-weight="bold">つなぐ！</text>
+
+  <!-- Water splash at bottom -->
+  <ellipse cx="160" cy="308" rx="80" ry="12" fill="#a8e8f8" opacity="0.6"/>
+  <ellipse cx="100" cy="314" rx="30" ry="7" fill="#a8e8f8" opacity="0.4"/>
+  <ellipse cx="220" cy="314" rx="30" ry="7" fill="#a8e8f8" opacity="0.4"/>
+
+  <!-- Name badge -->
+  <rect x="56" y="386" width="208" height="26" rx="13" fill="#2a9ab8"/>
+  <text x="160" y="404" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">調整イルカ</text>
+</svg>

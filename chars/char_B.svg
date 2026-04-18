@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG -->
+  <rect width="320" height="420" fill="#eef2f8" rx="24"/>
+
+  <!-- Desk -->
+  <rect x="28" y="318" width="264" height="16" rx="8" fill="#8B6348" stroke="#6b4b30" stroke-width="2"/>
+  <rect x="60" y="332" width="16" height="60" rx="6" fill="#8B6348"/>
+  <rect x="244" y="332" width="16" height="60" rx="6" fill="#8B6348"/>
+
+  <!-- Laptop base -->
+  <rect x="68" y="288" width="184" height="36" rx="8" fill="#9ab" stroke="#789" stroke-width="2"/>
+  <!-- Touchpad -->
+  <rect x="134" y="298" width="52" height="16" rx="4" fill="#7a8fa0" stroke="#6a7f90" stroke-width="1.5"/>
+  <!-- Keyboard keys hint -->
+  <rect x="78" y="294" width="46" height="8" rx="2" fill="#7a8fa0" opacity="0.5"/>
+  <rect x="178" y="294" width="46" height="8" rx="2" fill="#7a8fa0" opacity="0.5"/>
+
+  <!-- Laptop screen -->
+  <rect x="72" y="190" width="176" height="104" rx="10" fill="#1a1a2e" stroke="#789" stroke-width="2.5"/>
+  <!-- Screen bezel -->
+  <rect x="80" y="198" width="160" height="88" rx="6" fill="#0d1117"/>
+  <!-- Code on screen (green text lines) -->
+  <rect x="86" y="204" width="90" height="5" rx="2" fill="#00c896" opacity="0.9"/>
+  <rect x="86" y="214" width="70" height="5" rx="2" fill="#4d9fff" opacity="0.9"/>
+  <rect x="94" y="224" width="100" height="5" rx="2" fill="#00c896" opacity="0.8"/>
+  <rect x="94" y="234" width="60" height="5" rx="2" fill="#ff7b72" opacity="0.9"/>
+  <rect x="86" y="244" width="80" height="5" rx="2" fill="#00c896" opacity="0.8"/>
+  <rect x="94" y="254" width="50" height="5" rx="2" fill="#4d9fff" opacity="0.9"/>
+  <rect x="86" y="264" width="110" height="5" rx="2" fill="#00c896" opacity="0.7"/>
+  <!-- Cursor blink -->
+  <rect x="196" y="264" width="4" height="10" rx="1" fill="white" opacity="0.8"/>
+
+  <!-- Beaver body -->
+  <ellipse cx="160" cy="264" rx="60" ry="44" fill="#8B5C2A" stroke="#5c3a14" stroke-width="2.5"/>
+  <!-- Beaver belly (cream) -->
+  <ellipse cx="160" cy="272" rx="32" ry="28" fill="#e8c896"/>
+  <!-- Hands on keyboard -->
+  <ellipse cx="110" cy="298" rx="20" ry="12" fill="#8B5C2A" stroke="#5c3a14" stroke-width="2" transform="rotate(-10,110,298)"/>
+  <ellipse cx="210" cy="298" rx="20" ry="12" fill="#8B5C2A" stroke="#5c3a14" stroke-width="2" transform="rotate(10,210,298)"/>
+
+  <!-- Beaver head -->
+  <circle cx="160" cy="196" r="56" fill="#8B5C2A" stroke="#5c3a14" stroke-width="3"/>
+  <!-- Ears -->
+  <circle cx="112" cy="152" r="16" fill="#8B5C2A" stroke="#5c3a14" stroke-width="2.5"/>
+  <circle cx="208" cy="152" r="16" fill="#8B5C2A" stroke="#5c3a14" stroke-width="2.5"/>
+  <circle cx="112" cy="152" r="8" fill="#c8906a"/>
+  <circle cx="208" cy="152" r="8" fill="#c8906a"/>
+  <!-- Face (cream/tan muzzle) -->
+  <ellipse cx="160" cy="206" rx="28" ry="22" fill="#e8c896"/>
+  <!-- Glasses frame -->
+  <circle cx="140" cy="195" r="16" fill="none" stroke="#333" stroke-width="3"/>
+  <circle cx="180" cy="195" r="16" fill="none" stroke="#333" stroke-width="3"/>
+  <line x1="156" y1="195" x2="164" y2="195" stroke="#333" stroke-width="3"/>
+  <line x1="124" y1="192" x2="110" y2="188" stroke="#333" stroke-width="2.5"/>
+  <line x1="196" y1="192" x2="210" y2="188" stroke="#333" stroke-width="2.5"/>
+  <!-- Glass lenses (slight tint) -->
+  <circle cx="140" cy="195" r="15" fill="#a8d8f0" opacity="0.25"/>
+  <circle cx="180" cy="195" r="15" fill="#a8d8f0" opacity="0.25"/>
+  <!-- Eyes (focused) -->
+  <circle cx="140" cy="196" r="6" fill="#2a1a08"/>
+  <circle cx="180" cy="196" r="6" fill="#2a1a08"/>
+  <circle cx="142" cy="194" r="2" fill="white"/>
+  <circle cx="182" cy="194" r="2" fill="white"/>
+  <!-- Buck teeth -->
+  <rect x="152" y="213" width="9" height="12" rx="3" fill="white" stroke="#ddd" stroke-width="1"/>
+  <rect x="162" y="213" width="9" height="12" rx="3" fill="white" stroke="#ddd" stroke-width="1"/>
+  <!-- Nose -->
+  <ellipse cx="160" cy="212" rx="6" ry="4" fill="#4a2a08"/>
+
+  <!-- Flat beaver tail -->
+  <ellipse cx="160" cy="355" rx="52" ry="22" fill="#6b4020" stroke="#4a2808" stroke-width="2"/>
+  <!-- Tail texture lines -->
+  <line x1="118" y1="352" x2="202" y2="352" stroke="#5a3018" stroke-width="1.5"/>
+  <line x1="120" y1="360" x2="200" y2="360" stroke="#5a3018" stroke-width="1.5"/>
+
+  <!-- Name badge -->
+  <rect x="40" y="388" width="240" height="26" rx="13" fill="#1a6ef5"/>
+  <text x="160" y="406" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="13" font-weight="bold" fill="white">エンジニアビーバー</text>
+</svg>

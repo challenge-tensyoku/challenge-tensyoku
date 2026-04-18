@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420">
+  <!-- BG (dark study room) -->
+  <rect width="320" height="420" fill="#1a1a2e" rx="24"/>
+
+  <!-- Desk surface -->
+  <rect x="20" y="302" width="280" height="14" rx="6" fill="#4a3520" stroke="#2a1a10" stroke-width="2"/>
+
+  <!-- Monitor stand -->
+  <rect x="146" y="282" width="28" height="26" rx="4" fill="#555"/>
+  <rect x="130" y="305" width="60" height="8" rx="3" fill="#555"/>
+
+  <!-- Monitor frame -->
+  <rect x="50" y="148" width="220" height="142" rx="12" fill="#2a2a3e" stroke="#4a4a6e" stroke-width="2.5"/>
+  <!-- Screen glow -->
+  <rect x="60" y="158" width="200" height="122" rx="7" fill="#0d1120"/>
+
+  <!-- Charts on screen -->
+  <!-- Bar chart -->
+  <rect x="70" y="230" width="14" height="42" rx="2" fill="#1a6ef5"/>
+  <rect x="88" y="218" width="14" height="54" rx="2" fill="#00c896"/>
+  <rect x="106" y="208" width="14" height="64" rx="2" fill="#1a6ef5"/>
+  <rect x="124" y="225" width="14" height="47" rx="2" fill="#ff6b6b"/>
+  <rect x="142" y="215" width="14" height="57" rx="2" fill="#00c896"/>
+  <!-- Chart axes -->
+  <line x1="66" y1="272" x2="162" y2="272" stroke="#4a4a6e" stroke-width="1.5"/>
+  <line x1="66" y1="200" x2="66" y2="272" stroke="#4a4a6e" stroke-width="1.5"/>
+
+  <!-- Line graph (right side of screen) -->
+  <polyline points="172,240 192,218 212,228 232,205 248,215" fill="none" stroke="#FFD600" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Data points -->
+  <circle cx="172" cy="240" r="4" fill="#FFD600"/>
+  <circle cx="192" cy="218" r="4" fill="#FFD600"/>
+  <circle cx="212" cy="228" r="4" fill="#FFD600"/>
+  <circle cx="232" cy="205" r="4" fill="#FFD600"/>
+  <circle cx="248" cy="215" r="4" fill="#FFD600"/>
+  <!-- Small labels on screen -->
+  <rect x="170" y="163" width="72" height="6" rx="2" fill="#4a4a6e" opacity="0.8"/>
+  <rect x="170" y="173" width="52" height="4" rx="2" fill="#4a4a6e" opacity="0.5"/>
+
+  <!-- Owl body -->
+  <ellipse cx="160" cy="284" rx="50" ry="36" fill="#8B5C2A" stroke="#5a3810" stroke-width="2.5"/>
+  <!-- Wing left (pointing at screen) -->
+  <ellipse cx="98" cy="272" rx="34" ry="18" fill="#7a4c20" stroke="#5a3810" stroke-width="2" transform="rotate(-20,98,272)"/>
+  <!-- Wing right -->
+  <ellipse cx="220" cy="276" rx="28" ry="16" fill="#7a4c20" stroke="#5a3810" stroke-width="2" transform="rotate(15,220,276)"/>
+  <!-- Pointing claw (left wing tip) -->
+  <path d="M 72 264 L 62 258 M 72 264 L 65 268" stroke="#5a3810" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Owl head -->
+  <circle cx="160" cy="220" r="52" fill="#8B5C2A" stroke="#5a3810" stroke-width="3"/>
+  <!-- Ear tufts (horned owl) -->
+  <path d="M 132 172 L 124 148 L 144 168" fill="#7a4c20" stroke="#5a3810" stroke-width="2"/>
+  <path d="M 188 172 L 196 148 L 176 168" fill="#7a4c20" stroke="#5a3810" stroke-width="2"/>
+  <!-- Facial disc -->
+  <ellipse cx="160" cy="224" rx="40" ry="38" fill="#e8c896" stroke="#c8a070" stroke-width="1.5"/>
+  <!-- Big glasses -->
+  <circle cx="142" cy="220" r="18" fill="none" stroke="#222" stroke-width="3.5"/>
+  <circle cx="178" cy="220" r="18" fill="none" stroke="#222" stroke-width="3.5"/>
+  <line x1="160" y1="220" x2="160" y2="220" stroke="#222" stroke-width="3.5"/>
+  <line x1="124" y1="218" x2="108" y2="214" stroke="#222" stroke-width="2.5"/>
+  <line x1="196" y1="218" x2="212" y2="214" stroke="#222" stroke-width="2.5"/>
+  <!-- Lens fill -->
+  <circle cx="142" cy="220" r="17" fill="#c8e8f0" opacity="0.3"/>
+  <circle cx="178" cy="220" r="17" fill="#c8e8f0" opacity="0.3"/>
+  <!-- Eyes (focused/serious) -->
+  <circle cx="142" cy="221" r="8" fill="#1a1208"/>
+  <circle cx="178" cy="221" r="8" fill="#1a1208"/>
+  <circle cx="145" cy="219" r="3" fill="white"/>
+  <circle cx="181" cy="219" r="3" fill="white"/>
+  <!-- Beak -->
+  <polygon points="160,230 154,240 166,240" fill="#c47a00"/>
+  <!-- Screen glow on face -->
+  <ellipse cx="160" cy="218" rx="38" ry="36" fill="#4d9fff" opacity="0.08"/>
+
+  <!-- Coffee mug on desk -->
+  <rect x="256" y="278" width="30" height="26" rx="5" fill="#4a4a6e" stroke="#3a3a5e" stroke-width="2"/>
+  <path d="M 286 284 Q 296 284 296 291 Q 296 298 286 298" stroke="#4a4a6e" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Steam -->
+  <path d="M 262 274 Q 265 268 262 262" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 271 274 Q 274 268 271 262" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Name badge -->
+  <rect x="50" y="386" width="220" height="26" rx="13" fill="#1a6ef5"/>
+  <text x="160" y="404" text-anchor="middle" font-family="Hiragino Kaku Gothic Pro,Noto Sans JP,sans-serif" font-size="14" font-weight="bold" fill="white">分析フクロウ</text>
+</svg>
