@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /challenge-tensyoku/
 
 Sitemap: https://challenge-tensyoku.com/sitemap.xml
