@@ -44,6 +44,18 @@ URLS = [
     "https://challenge-tensyoku.com/freeter-naitei.html",
     "https://challenge-tensyoku.com/tensyoku-timing.html",
     "https://challenge-tensyoku.com/freeter-resume-photo.html",
+    "https://challenge-tensyoku.com/freeter-nenkin.html",
+    "https://challenge-tensyoku.com/freeter-shotoku-zeikin.html",
+    "https://challenge-tensyoku.com/seishain-bonus.html",
+    "https://challenge-tensyoku.com/tensyoku-age-limit.html",
+    "https://challenge-tensyoku.com/tensyoku-mensetsu-shitsumon.html",
+    "https://challenge-tensyoku.com/tensyoku-naitei-after.html",
+    "https://challenge-tensyoku.com/tensyoku-doki.html",
+    "https://challenge-tensyoku.com/freeter-kekkon.html",
+    "https://challenge-tensyoku.com/freeter-car-loan.html",
+    "https://challenge-tensyoku.com/freeter-baito-chigai.html",
+    "https://challenge-tensyoku.com/eigyo-mikeiken.html",
+    "https://challenge-tensyoku.com/jimukei-tensyoku.html",
 ]
 
 def get_access_token():
