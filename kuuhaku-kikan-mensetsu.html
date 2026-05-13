@@ -10,6 +10,7 @@
 <!-- Google Fontsの読み込み -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 <style>
+  html, body { overflow-x: hidden; }
   /* ===== CSS変数定義 ===== */
   :root {
     --primary: #1a6ef5;
@@ -325,6 +326,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
     background: var(--white);
     transition: border-color 0.2s, box-shadow 0.2s;
   }
@@ -677,6 +679,11 @@
   @media (max-width: 768px) {
     .sp-cta-bar { display: flex; }
     body { padding-bottom: 58px; }
+  }
+
+  @media (max-width: 600px) {
+    .aff-card { flex-direction: column; align-items: stretch; padding: 16px; gap: 12px; }
+    .aff-btn { white-space: normal; text-align: center; width: 100%; padding: 12px 16px; }
   }
 </style>
 </head>

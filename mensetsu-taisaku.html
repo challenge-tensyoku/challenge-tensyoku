@@ -9,6 +9,7 @@
 <meta content="「何を聞かれるかわからない」は事前準備で解決できます。定番質問7つの回答例・NG例・面接前チェックリストをまとめました。" name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Montserrat:wght@700;900&amp;display=swap" rel="stylesheet"/>
 <style>
+  html, body { overflow-x: hidden; }
   :root { --primary: #1a6ef5; --primary-dark: #1358cc; --primary-light: #e8f0fe; --dark: #0f1f3d; --text: #1a2640; --muted: #6b7a99; --border: #e2e8f4; --light: #f7f9ff; --white: #ffffff; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Noto Sans JP', sans-serif; background: var(--light); color: var(--text); line-height: 1.8; font-size: 15px; }
@@ -54,7 +55,7 @@
   .qa-a-label { display: inline-block; background: #f0fdf4; color: #16a34a; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 900; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
   .qa-a p { font-size: 0.88rem; margin: 0; }
   .qa-example { background: var(--primary-light); border-left: 3px solid var(--primary); padding: 12px 16px; margin-top: 10px; border-radius: 0 8px 8px 0; font-size: 0.85rem; line-height: 1.8; }
-  .aff-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 20px 24px; margin: 20px 0; display: flex; align-items: center; gap: 20px; background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; }
+  .aff-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 20px 24px; margin: 20px 0; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; }
   .aff-card:hover { border-color: var(--primary); box-shadow: 0 4px 16px rgba(26,110,245,0.1); }
   .aff-card.top { border-color: var(--primary); border-width: 2px; }
   .aff-rank { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; min-width: 44px; text-align: center; line-height: 1; }
@@ -187,6 +188,11 @@
   @media (max-width: 768px) {
     .sp-cta-bar { display: flex; }
     body { padding-bottom: 58px; }
+  }
+
+  @media (max-width: 600px) {
+    .aff-card { flex-direction: column; align-items: stretch; padding: 16px; gap: 12px; }
+    .aff-btn { white-space: normal; text-align: center; width: 100%; padding: 12px 16px; }
   }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"正社員面接でよく聞かれる質問7選【回答例つき】フリーター・未経験が一発合格するコツ | チャレンジ転職","description":"「何を聞かれるかわからない」は事前準備で解決できます。定番質問7つの回答例・NG例・面接前チェックリストをまとめました。","url":"https://challenge-tensyoku.com/mensetsu-taisaku.html","isPartOf":{"@type":"WebSite","name":"チャレンジ転職","url":"https://challenge-tensyoku.com/"}}</script></head>

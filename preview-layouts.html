@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>レイアウト案 C〜G プレビュー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet"/>
+<style>
+  html, body { overflow-x: hidden; }
+  :root { --primary: #1a6ef5; --primary-dark: #1358cc; --accent: #00c896; --dark: #0f1f3d; --text: #1a2640; --muted: #6b7a99; --border: #e2e8f4; --light: #f7f9ff; --white: #fff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--light); color: var(--text); line-height: 1.8; }
+
+  .preview-header { background: var(--dark); color: #fff; padding: 40px 24px; text-align: center; }
+  .preview-header h1 { font-size: 1.4rem; font-weight: 900; margin-bottom: 8px; }
+  .preview-header p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+  .layout-section { max-width: 960px; margin: 0 auto; padding: 48px 20px; }
+  .layout-label { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 900; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .layout-title { font-size: 1.3rem; font-weight: 900; color: var(--dark); margin-bottom: 4px; }
+  .layout-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 28px; }
+  .divider { border: none; border-top: 2px solid var(--border); margin: 0; }
+
+  /* ===== 案C: ヒーロー型 ===== */
+  .hero-full { position: relative; width: 100%; height: 420px; overflow: hidden; border-radius: 16px; margin-bottom: 16px; }
+  .hero-full-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-full-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.75) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 24px; }
+  .hero-full-tag { background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-bottom: 16px; }
+  .hero-full-title { color: #fff; font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 900; line-height: 1.4; margin-bottom: 12px; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+  .hero-full-sub { color: rgba(255,255,255,0.85); font-size: 0.92rem; margin-bottom: 24px; text-shadow: 0 1px 6px rgba(0,0,0,0.4); }
+  .hero-full-cta { display: inline-block; background: var(--primary); color: #fff; font-weight: 900; font-size: 0.88rem; padding: 12px 28px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 16px rgba(26,110,245,0.4); transition: transform 0.2s; }
+  .hero-full-cta:hover { transform: translateY(-2px); }
+  .hero-sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .hero-sub-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none; color: inherit; transition: border-color 0.2s; }
+  .hero-sub-card:hover { border-color: var(--primary); }
+  .hero-sub-card h4 { font-size: 0.82rem; font-weight: 900; color: var(--dark); margin-bottom: 4px; }
+  .hero-sub-card p { font-size: 0.72rem; color: var(--muted); }
+
+  /* ===== 案D: 縦並びストーリー型 ===== */
+  .story-item { display: flex; gap: 24px; align-items: center; margin-bottom: 32px; text-decoration: none; color: inherit; }
+  .story-item:nth-child(even) { flex-direction: row-reverse; }
+  .story-img { width: 45%; aspect-ratio: 16/10; border-radius: 14px; object-fit: cover; flex-shrink: 0; transition: transform 0.25s; }
+  .story-item:hover .story-img { transform: scale(1.02); }
+  .story-body { flex: 1; }
+  .story-tag { display: inline-block; background: var(--primary-light); color: var(--primary); font-size: 0.68rem; font-weight: 900; padding: 3px 10px; border-radius: 4px; margin-bottom: 8px; }
+  .story-title { font-size: 1.1rem; font-weight: 900; color: var(--dark); line-height: 1.5; margin-bottom: 8px; }
+  .story-lead { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
+  .story-link { font-size: 0.82rem; color: var(--primary); font-weight: 700; }
+
+  /* ===== 案E: モザイク型 ===== */
+  .mosaic { display: grid; grid-template-columns: 1.6fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 400px; }
+  .mosaic-card { position: relative; border-radius: 14px; overflow: hidden; text-decoration: none; color: #fff; }
+  .mosaic-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .mosaic-card:hover img { transform: scale(1.05); }
+  .mosaic-card .m-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.7) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; }
+  .mosaic-card .m-tag { font-size: 0.65rem; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px; align-self: flex-start; margin-bottom: 6px; }
+  .mosaic-card h3 { font-size: 0.95rem; font-weight: 900; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
+  .mosaic-main { grid-row: 1 / 3; }
+  .mosaic-card.small h3 { font-size: 0.82rem; }
+
+  /* ===== 案F: テキスト主導型 ===== */
+  .text-hero { background: var(--dark); border-radius: 16px; padding: 48px 32px; text-align: center; margin-bottom: 20px; }
+  .text-hero-quote { font-size: clamp(1.2rem, 3.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.5; margin-bottom: 16px; }
+  .text-hero-quote em { font-style: normal; color: #7dd3fc; }
+  .text-hero-author { font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+  .text-hero-cta { display: inline-block; background: var(--primary); color: #fff; font-weight: 900; font-size: 0.88rem; padding: 12px 28px; border-radius: 8px; text-decoration: none; }
+  .text-sub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .text-sub-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-decoration: none; color: inherit; transition: border-color 0.2s; }
+  .text-sub-card:hover { border-color: var(--primary); }
+  .text-sub-num { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+  .text-sub-card h4 { font-size: 0.88rem; font-weight: 900; color: var(--dark); margin-bottom: 6px; }
+  .text-sub-card p { font-size: 0.78rem; color: var(--muted); }
+
+  /* ===== 案G: タイムライン型 ===== */
+  .timeline { position: relative; padding-left: 40px; }
+  .timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 36px; text-decoration: none; color: inherit; display: block; }
+  .tl-dot { position: absolute; left: -33px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--primary); }
+  .tl-age { font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 900; color: var(--primary); letter-spacing: 1px; margin-bottom: 4px; }
+  .tl-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .tl-item:hover .tl-card { border-color: var(--primary); box-shadow: 0 4px 16px rgba(26,110,245,0.1); }
+  .tl-card h3 { font-size: 1rem; font-weight: 900; color: var(--dark); margin-bottom: 6px; }
+  .tl-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+  .tl-link { font-size: 0.78rem; color: var(--primary); font-weight: 700; }
+
+  @media (max-width: 640px) {
+    .hero-full { height: 300px; }
+    .hero-sub-grid, .text-sub-grid { grid-template-columns: 1fr; }
+    .story-item, .story-item:nth-child(even) { flex-direction: column; }
+    .story-img { width: 100%; }
+    .mosaic { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; }
+    .mosaic-main { grid-row: auto; }
+    .mosaic-card { height: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-header">
+  <h1>レイアウト案 C〜G プレビュー</h1>
+  <p>カード型以外の5パターン。どれがchallenge-tensyokuに合うか比較してください。</p>
+</div>
+
+<!-- ===== 案C: ヒーロー型 ===== -->
+<div class="layout-section">
+  <span class="layout-label">OPTION C</span>
+  <div class="layout-title">ヒーロー型（大型1枚+関連記事3つ）</div>
+  <div class="layout-desc">注目記事を最大限に目立たせる。下に関連記事をコンパクトに配置。</div>
+
+  <div class="hero-full">
+    <img class="hero-full-img" src="https://images.unsplash.com/photo-1542332213-31f87348057f?w=1200&q=80" alt="">
+    <div class="hero-full-overlay">
+      <span class="hero-full-tag"># フリーター・正社員</span>
+      <div class="hero-full-title">21歳までフリーターだった俺の話</div>
+      <div class="hero-full-sub">手取り14万8,500円から始まった転職記</div>
+      <a href="#" class="hero-full-cta">記事を読む →</a>
+    </div>
+  </div>
+  <div class="hero-sub-grid">
+    <a href="#" class="hero-sub-card">
+      <h4>🎓 学歴がない俺でも、内定もらえた</h4>
+      <p>18社受けて2社内定。何が変わったか</p>
+    </a>
+    <a href="#" class="hero-sub-card">
+      <h4>🏠 3ヶ月、就活サイト開いては閉じてた</h4>
+      <p>動き出すまでが一番しんどかった</p>
+    </a>
+    <a href="#" class="hero-sub-card">
+      <h4>💰 手取り14万8,500円の使い道、全部晒す</h4>
+      <p>フリーター時代のリアルな家計簿</p>
+    </a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== 案D: 縦並びストーリー型 ===== -->
+<div class="layout-section">
+  <span class="layout-label">OPTION D</span>
+  <div class="layout-title">縦並びストーリー型（note・雑誌風）</div>
+  <div class="layout-desc">写真+リード文を交互に配置。雑誌の目次ページのような読み物感。</div>
+
+  <a href="#" class="story-item">
+    <img class="story-img" src="https://images.unsplash.com/photo-1542332213-31f87348057f?w=600&q=80" alt="">
+    <div class="story-body">
+      <span class="story-tag">フリーター・正社員</span>
+      <h3 class="story-title">21歳までフリーターだった俺の話</h3>
+      <p class="story-lead">手取り14万8,500円。居酒屋と倉庫の掛け持ちで、休みは月4日。あの時動いてなかったらと思うとゾッとする。</p>
+      <span class="story-link">続きを読む →</span>
+    </div>
+  </a>
+  <a href="#" class="story-item">
+    <img class="story-img" src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?w=600&q=80" alt="">
+    <div class="story-body">
+      <span class="story-tag">高卒・中卒</span>
+      <h3 class="story-title">学歴がない俺でも、内定もらえた</h3>
+      <p class="story-lead">18社受けて2社内定。学歴不問の求人は探せばある。高卒でも正社員になれた方法を全部話す。</p>
+      <span class="story-link">続きを読む →</span>
+    </div>
+  </a>
+  <a href="#" class="story-item">
+    <img class="story-img" src="https://images.unsplash.com/photo-1501139083538-0139583c060f?w=600&q=80" alt="">
+    <div class="story-body">
+      <span class="story-tag">空白期間</span>
+      <h3 class="story-title">3ヶ月、就活サイト開いては閉じてた</h3>
+      <p class="story-lead">動き出すまでが一番しんどい。でもエージェントに相談したら、全部無料でやってくれた。あの一歩がなかったら今の俺はない。</p>
+      <span class="story-link">続きを読む →</span>
+    </div>
+  </a>
+</div>
+
+<hr class="divider">
+
+<!-- ===== 案E: モザイク型 ===== -->
+<div class="layout-section">
+  <span class="layout-label">OPTION E</span>
+  <div class="layout-title">モザイク型（大1+小2グリッド）</div>
+  <div class="layout-desc">注目度に差をつける。左がメイン、右上下がサブ。</div>
+
+  <div class="mosaic">
+    <a href="#" class="mosaic-card mosaic-main">
+      <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?w=800&q=80" alt="">
+      <div class="m-overlay">
+        <span class="m-tag"># フリーター・正社員</span>
+        <h3>21歳までフリーターだった俺の話</h3>
+      </div>
+    </a>
+    <a href="#" class="mosaic-card small">
+      <img src="https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?w=600&q=80" alt="">
+      <div class="m-overlay">
+        <span class="m-tag"># 高卒・中卒</span>
+        <h3>学歴がない俺でも、内定もらえた</h3>
+      </div>
+    </a>
+    <a href="#" class="mosaic-card small">
+      <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?w=600&q=80" alt="">
+      <div class="m-overlay">
+        <span class="m-tag"># 空白期間</span>
+        <h3>3ヶ月、就活サイト開いては閉じてた</h3>
+      </div>
+    </a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== 案F: テキスト主導型 ===== -->
+<div class="layout-section">
+  <span class="layout-label">OPTION F</span>
+  <div class="layout-title">テキスト主導型（引用文+数字カード）</div>
+  <div class="layout-desc">写真を使わず、やまとの言葉と数字で引き込む。E-E-A-T強化型。</div>
+
+  <div class="text-hero">
+    <div class="text-hero-quote">「俺は<em>21歳までフリーター</em>だった。<br>手取り<em>14万8,500円</em>。貯金は月<em>18,000円</em>。<br>あの時動いてなかったら、今の俺はない。」</div>
+    <div class="text-hero-author">— やまと（@ymt_life_）23歳・人材業界2年目</div>
+    <a href="#" class="text-hero-cta">俺の転職ストーリーを読む →</a>
+  </div>
+  <div class="text-sub-grid">
+    <a href="#" class="text-sub-card">
+      <div class="text-sub-num">148,500</div>
+      <h4>フリーター時代の手取り</h4>
+      <p>居酒屋+倉庫バイト掛け持ち。月170時間働いて残り18,000円だった。</p>
+    </a>
+    <a href="#" class="text-sub-card">
+      <div class="text-sub-num">18 → 2</div>
+      <h4>応募数 → 内定数</h4>
+      <p>18社受けて2社内定。学歴も経験もなかった俺が、何を変えたか。</p>
+    </a>
+    <a href="#" class="text-sub-card">
+      <div class="text-sub-num">223,500</div>
+      <h4>正社員になった今の手取り</h4>
+      <p>あれから2年。月5万貯金できるようになった。人生変わった。</p>
+    </a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ===== 案G: タイムライン型 ===== -->
+<div class="layout-section">
+  <span class="layout-label">OPTION G</span>
+  <div class="layout-title">タイムライン型（やまとの経歴ストーリー）</div>
+  <div class="layout-desc">やまとの人生を時系列で見せる。各ステップが記事へのリンクになる。</div>
+
+  <div class="timeline">
+    <a href="#" class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-age">19〜21歳 — フリーター時代</div>
+      <div class="tl-card">
+        <h3>手取り14万8,500円。居酒屋と倉庫の掛け持ちで生きてた。</h3>
+        <p>貯金は月18,000円。奨学金を返しながら、コンビニ弁当も買えない日があった。「このままじゃヤバい」と思いながら、就活サイトを開いては閉じるを3ヶ月繰り返してた。</p>
+        <span class="tl-link">この時期の話を読む →</span>
+      </div>
+    </a>
+    <a href="#" class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-age">21歳 — 転職活動（4ヶ月間）</div>
+      <div class="tl-card">
+        <h3>18社受けて2社内定。学歴も経験もなかった俺が変えたこと。</h3>
+        <p>エージェントに相談して、書類の書き方から面接対策まで全部無料でやってもらった。バイトしながら4ヶ月。正直キツかった。でもあの一歩がなかったら今の俺はない。</p>
+        <span class="tl-link">転職活動の話を読む →</span>
+      </div>
+    </a>
+    <a href="#" class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-age">22〜23歳 — 正社員（今）</div>
+      <div class="tl-card">
+        <h3>手取り22万3,500円。月5万貯金。人生変わった。</h3>
+        <p>ボーナス年2回。社会保険もついて、ローンも通る。フリーター時代には想像もできなかった生活。同じ状況の人がいたら、まず話だけでも聞いてほしい。</p>
+        <span class="tl-link">正社員になった今の話を読む →</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div style="text-align:center; padding: 40px 20px; color: var(--muted); font-size: 0.85rem;">
+  <p style="margin-bottom: 8px;">A〜G のうち、採用したいレイアウトを選んでください。</p>
+  <p>複数の良い部分を組み合わせる「ハイブリッド案」も可能です。</p>
+</div>
+
+</body>
+</html>

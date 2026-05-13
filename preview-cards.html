@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>カード写真候補 プレビュー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Montserrat:wght@700;900&display=swap" rel="stylesheet"/>
+<style>
+  html, body { overflow-x: hidden; }
+  :root { --primary: #1a6ef5; --dark: #0f1f3d; --text: #1a2640; --muted: #6b7a99; --border: #e2e8f4; --light: #f7f9ff; --white: #fff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: #111; color: #eee; padding: 40px 20px; line-height: 1.7; }
+  .section { max-width: 1100px; margin: 0 auto 60px; }
+  .section-label { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 900; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .section-title { font-size: 1.3rem; font-weight: 900; color: #fff; margin-bottom: 4px; }
+  .section-sub { font-size: 0.82rem; color: #888; margin-bottom: 24px; }
+  hr { border: none; border-top: 1px solid #333; margin: 48px 0; }
+
+  .candidates { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+
+  .candidate { background: #1a1a1a; border-radius: 14px; overflow: hidden; border: 1px solid #333; }
+  .candidate:hover { border-color: var(--primary); }
+  .candidate-label { padding: 10px 16px 0; font-size: 0.72rem; font-weight: 900; color: var(--primary); letter-spacing: 1px; }
+
+  .hero-card { display: block; text-decoration: none; color: #fff; position: relative; aspect-ratio: 3 / 2; }
+  .hero-card-image { width: 100%; height: 100%; background-size: cover; background-position: center; position: relative; }
+  .hero-card-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.72) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px 20px; }
+  .hero-card-tag { display: inline-block; background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; align-self: flex-start; }
+  .hero-card-title { font-size: 1.05rem; font-weight: 900; line-height: 1.4; margin-bottom: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+  .hero-card-sub { font-size: 0.75rem; color: rgba(255,255,255,0.8); text-shadow: 0 1px 4px rgba(0,0,0,0.4); }
+
+  .candidate-info { padding: 10px 16px 14px; font-size: 0.75rem; color: #888; line-height: 1.6; }
+  .candidate-info strong { color: #ccc; }
+
+  @media (max-width: 700px) { .candidates { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ===== カード1: フリーター系 ===== -->
+<div class="section">
+  <span class="section-label">CARD 1 — フリーター・正社員</span>
+  <div class="section-title">21歳までフリーターだった俺の話</div>
+  <div class="section-sub">コンセプト：夜・若者・葛藤・夜の都会で働く</div>
+  <div class="candidates">
+
+    <div class="candidate">
+      <div class="candidate-label">候補A</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># フリーター・正社員</span>
+            <h3 class="hero-card-title">21歳までフリーターだった俺の話</h3>
+            <p class="hero-card-sub">手取り14万8,500円から始まった転職記</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>夜の山と星空</strong> — 暗い中に光がある構図。孤独感と希望の両方。文字の視認性◎</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補B</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># フリーター・正社員</span>
+            <h3 class="hero-card-title">21歳までフリーターだった俺の話</h3>
+            <p class="hero-card-sub">手取り14万8,500円から始まった転職記</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>夜明け前の山</strong> — 暗→明の境目。「これから変わる」感。壮大さあり</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補C</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1542332213-31f87348057f?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># フリーター・正社員</span>
+            <h3 class="hero-card-title">21歳までフリーターだった俺の話</h3>
+            <p class="hero-card-sub">手取り14万8,500円から始まった転職記</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>夜の雨の街</strong> — 都会の夜+雨。孤独・バイト帰りの疲労感。やまとの世界観に近い</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補D</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># フリーター・正社員</span>
+            <h3 class="hero-card-title">21歳までフリーターだった俺の話</h3>
+            <p class="hero-card-sub">手取り14万8,500円から始まった転職記</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>夜の都市俯瞰</strong> — ロンドンの夜景。都会の大きさ×個人の小ささ。スケール感あり</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補E</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># フリーター・正社員</span>
+            <h3 class="hero-card-title">21歳までフリーターだった俺の話</h3>
+            <p class="hero-card-sub">手取り14万8,500円から始まった転職記</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>暗い窓辺のシルエット</strong> — 一人で考え込む後ろ姿。内省的。顔が見えないのが良い</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補F</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># フリーター・正社員</span>
+            <h3 class="hero-card-title">21歳までフリーターだった俺の話</h3>
+            <p class="hero-card-sub">手取り14万8,500円から始まった転職記</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>夜のネオン街</strong> — 繁華街の光。居酒屋バイトの世界観。生活感あり</div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<!-- ===== カード2: 高卒・中卒系 ===== -->
+<div class="section">
+  <span class="section-label">CARD 2 — 高卒・中卒</span>
+  <div class="section-title">学歴がない俺でも、内定もらえた</div>
+  <div class="section-sub">コンセプト：街・若者・希望・動き出した瞬間</div>
+  <div class="candidates">
+
+    <div class="candidate">
+      <div class="candidate-label">候補A</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 高卒・中卒</span>
+            <h3 class="hero-card-title">学歴がない俺でも、内定もらえた</h3>
+            <p class="hero-card-sub">18社受けて2社内定。何が変わったか</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>朝焼けの道</strong> — 真っ直ぐな道+朝の光。「歩き出す」メタファー。希望感◎</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補B</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 高卒・中卒</span>
+            <h3 class="hero-card-title">学歴がない俺でも、内定もらえた</h3>
+            <p class="hero-card-sub">18社受けて2社内定。何が変わったか</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>朝の木漏れ日</strong> — 温かい光が差し込む。穏やかな希望。やまとのトーンに合う</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補C</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 高卒・中卒</span>
+            <h3 class="hero-card-title">学歴がない俺でも、内定もらえた</h3>
+            <p class="hero-card-sub">18社受けて2社内定。何が変わったか</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>山頂からの眺め</strong> — 登った先の景色。達成感・乗り越えた感。やや明るめ</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補D</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1523059623039-a9ed027e7fad?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 高卒・中卒</span>
+            <h3 class="hero-card-title">学歴がない俺でも、内定もらえた</h3>
+            <p class="hero-card-sub">18社受けて2社内定。何が変わったか</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>階段を上る足元</strong> — 一段ずつ上がる。「学歴なくても一歩ずつ」の比喩。暗めで文字映え◎</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補E</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 高卒・中卒</span>
+            <h3 class="hero-card-title">学歴がない俺でも、内定もらえた</h3>
+            <p class="hero-card-sub">18社受けて2社内定。何が変わったか</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>橋の上の人影</strong> — 一人で前を向いて歩く後ろ姿。孤独だけど前向き</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補F</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 高卒・中卒</span>
+            <h3 class="hero-card-title">学歴がない俺でも、内定もらえた</h3>
+            <p class="hero-card-sub">18社受けて2社内定。何が変わったか</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>都市のビル群（暗め）</strong> — 大きな街に飛び込む。スケール感。暗トーンで文字映え◎</div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<!-- ===== カード3: 空白期間系 ===== -->
+<div class="section">
+  <span class="section-label">CARD 3 — 空白期間</span>
+  <div class="section-title">3ヶ月、就活サイト開いては閉じてた</div>
+  <div class="section-sub">コンセプト：室内・静寂・夜・ひとり・動けない感覚</div>
+  <div class="candidates">
+
+    <div class="candidate">
+      <div class="candidate-label">候補A</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 空白期間</span>
+            <h3 class="hero-card-title">3ヶ月、就活サイト開いては閉じてた</h3>
+            <p class="hero-card-sub">動き出すまでが一番しんどかった</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>暗い部屋のPC画面</strong> — 画面の光だけで照らされる。就活サイトを開いてる感。直球</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補B</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 空白期間</span>
+            <h3 class="hero-card-title">3ヶ月、就活サイト開いては閉じてた</h3>
+            <p class="hero-card-sub">動き出すまでが一番しんどかった</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>暗い部屋の窓</strong> — 外の光が見えるけど出られない。閉塞感と希望の対比</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補C</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 空白期間</span>
+            <h3 class="hero-card-title">3ヶ月、就活サイト開いては閉じてた</h3>
+            <p class="hero-card-sub">動き出すまでが一番しんどかった</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>時計のクローズアップ</strong> — 時間が過ぎていく焦り。「3ヶ月」の時間感覚とマッチ</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補D</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 空白期間</span>
+            <h3 class="hero-card-title">3ヶ月、就活サイト開いては閉じてた</h3>
+            <p class="hero-card-sub">動き出すまでが一番しんどかった</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>腕時計クローズアップ</strong> — 時間を気にする手元。日常感+焦り。暗トーン◎</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補E</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 空白期間</span>
+            <h3 class="hero-card-title">3ヶ月、就活サイト開いては閉じてた</h3>
+            <p class="hero-card-sub">動き出すまでが一番しんどかった</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>空っぽのオフィス</strong> — 誰もいない空間。「自分はここにいない」感。静寂</div>
+    </div>
+
+    <div class="candidate">
+      <div class="candidate-label">候補F</div>
+      <div class="hero-card">
+        <div class="hero-card-image" style="background-image: url('https://images.unsplash.com/photo-1531746790095-e5f6ef06e844?w=800&q=80');">
+          <div class="hero-card-overlay">
+            <span class="hero-card-tag"># 空白期間</span>
+            <h3 class="hero-card-title">3ヶ月、就活サイト開いては閉じてた</h3>
+            <p class="hero-card-sub">動き出すまでが一番しんどかった</p>
+          </div>
+        </div>
+      </div>
+      <div class="candidate-info"><strong>暗い廊下の先の光</strong> — トンネルの出口。「動き出せば光がある」メタファー</div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+<div style="text-align:center; color:#666; font-size:0.8rem; padding: 20px;">
+  <p>各カードごとに A〜F から1枚ずつ選んでください。</p>
+  <p>例: 「カード1=C、カード2=D、カード3=F」</p>
+</div>
+
+</body>
+</html>
