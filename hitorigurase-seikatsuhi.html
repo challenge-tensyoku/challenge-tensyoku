@@ -30,7 +30,7 @@
   .article-hero h1 em { font-style: normal; color: #7dd3fc; }
   .article-meta { display: flex; gap: 20px; font-size: 0.78rem; color: rgba(255,255,255,0.7); flex-wrap: wrap; }
   .container { max-width: 1060px; margin: 36px auto 60px; padding: 0 20px; display: grid; grid-template-columns: 1fr 260px; gap: 28px; align-items: start; }
-  @media (max-width: 768px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } header { padding: 0 16px; height: 56px; } nav { display: none; } .logo { font-size: 1rem; } .logo-icon { width: 28px; height: 28px; font-size: 0.85rem; } }
+  @media (max-width: 768px) { .container { grid-template-columns: minmax(0, 1fr); } .sidebar { display: none; } header { padding: 0 16px; height: 56px; } nav { display: none; } .logo { font-size: 1rem; } .logo-icon { width: 28px; height: 28px; font-size: 0.85rem; } }
   .article-body { background: var(--white); border-radius: 16px; padding: 36px 40px; box-shadow: 0 2px 12px rgba(26,110,245,0.06); }
   @media (max-width: 600px) { .article-body { padding: 24px 18px; } }
   .toc { background: var(--light); border: 1.5px solid var(--border); border-radius: 12px; padding: 22px 26px; margin-bottom: 32px; }
@@ -111,7 +111,7 @@
   .cta-mid-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .cta-mid-text strong { display: block; color: #fff; font-size: 0.95rem; margin-bottom: 4px; }
   .cta-mid-text p { color: rgba(255,255,255,0.8); font-size: 0.82rem; margin: 0; }
-  .cta-mid-btn { display: inline-block; background: #fff; color: var(--primary); font-weight: 900; font-size: 0.85rem; padding: 10px 20px; text-decoration: none; border-radius: 8px; white-space: nowrap; flex-shrink: 0; }
+  .cta-mid-btn { display: inline-block; background: #fff; color: var(--primary); font-weight: 900; font-size: 0.85rem; padding: 10px 20px; text-decoration: none; border-radius: 8px; white-space: nowrap; flex-shrink: 0; max-width: 100%; box-sizing: border-box; }
   .cta-mid-btn:hover { background: var(--primary-light); }
 
   /* === HAMBURGER MENU (SP) === */
@@ -204,6 +204,7 @@
   @media (max-width: 600px) {
     .aff-card { flex-direction: column; align-items: stretch; padding: 16px; gap: 12px; }
     .aff-btn { white-space: normal; text-align: center; max-width: 100%; box-sizing: border-box; padding: 12px 16px; }
+    .cta-mid-btn { white-space: normal; }
   }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"20代の一人暮らしにかかる費用は？正社員の給料で生活できる？【徹底解説】| チャレンジ転職","description":"20代の一人暮らしにかかる費用と正社員の給料で生活できるかを徹底解説。月々の生活費・節約のコツ・正社員になるメリットまで詳しくまとめました。","url":"https://challenge-tensyoku.com/hitorigurase-seikatsuhi.html","isPartOf":{"@type":"WebSite","name":"チャレンジ転職","url":"https://challenge-tensyoku.com/"}}</script></head>

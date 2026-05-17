@@ -154,7 +154,7 @@
   }
 
   @media (max-width: 768px) {
-    .container { grid-template-columns: 1fr; }
+    .container { grid-template-columns: minmax(0, 1fr); }
     .sidebar { display: none; }
     nav { display: none; }
     header { padding: 0 16px; height: 56px; }
@@ -502,7 +502,7 @@
   .cta-mid-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .cta-mid-text strong { display: block; color: #fff; font-size: 0.95rem; margin-bottom: 4px; }
   .cta-mid-text p { color: rgba(255,255,255,0.8); font-size: 0.82rem; margin: 0; }
-  .cta-mid-btn { display: inline-block; background: #fff; color: var(--primary); font-weight: 900; font-size: 0.85rem; padding: 10px 20px; text-decoration: none; border-radius: 8px; white-space: nowrap; flex-shrink: 0; }
+  .cta-mid-btn { display: inline-block; background: #fff; color: var(--primary); font-weight: 900; font-size: 0.85rem; padding: 10px 20px; text-decoration: none; border-radius: 8px; white-space: nowrap; flex-shrink: 0; max-width: 100%; box-sizing: border-box; }
   .cta-mid-btn:hover { background: var(--primary-light); }
 
   /* === HAMBURGER MENU (SP) === */
@@ -595,6 +595,7 @@
   @media (max-width: 600px) {
     .aff-card { flex-direction: column; align-items: stretch; padding: 16px; gap: 12px; }
     .aff-btn { white-space: normal; text-align: center; max-width: 100%; box-sizing: border-box; padding: 12px 16px; }
+    .cta-mid-btn { white-space: normal; }
   }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"フリーターが内定をもらうためのコツ7選【元フリーターが語る成功法則】 | チャレンジ転職","description":"フリーターが内定をもらうために押さえるべきコツを7つ解説。企業が懸念する点の払拭方法・書類選考突破・面接対策まで、実践的な内定獲得ノウハウをまとめました。","url":"https://challenge-tensyoku.com/freeter-naitei.html","isPartOf":{"@type":"WebSite","name":"チャレンジ転職","url":"https://challenge-tensyoku.com/"}}</script></head>

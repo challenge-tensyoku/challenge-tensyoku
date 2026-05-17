@@ -151,7 +151,7 @@
 
   /* ===== モバイル対応（1カラム） ===== */
   @media (max-width: 768px) {
-    .container { grid-template-columns: 1fr; }
+    .container { grid-template-columns: minmax(0, 1fr); }
     .sidebar { display: none; }
     header { padding: 0 16px; height: 56px; }
     nav { display: none; }
@@ -634,6 +634,10 @@
   @media (max-width: 768px) {
     .sp-cta-bar { display: flex; }
     body { padding-bottom: 58px; }
+  }
+
+  @media (max-width: 600px) {
+    .cta-mid-btn { white-space: normal; }
   }
 </style>
 </head>
